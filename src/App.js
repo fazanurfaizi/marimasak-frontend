@@ -11,6 +11,7 @@ import {
   faUser,
   faPencilAlt,
 } from '@fortawesome/free-solid-svg-icons'
+import MobileNavbar from './components/MobileNavbar'
 import Navbar from './components/Navbar'
 import SideSetting from './components/SideSetting'
 
@@ -30,6 +31,7 @@ library.add(
 function App() {
   return (
     <div className="theme-layout">
+      <MobileNavbar />
       <Navbar />
       <SideSetting />
     </div>
