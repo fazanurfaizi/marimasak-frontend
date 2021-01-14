@@ -1,8 +1,8 @@
 const LeftSidebar = () => {
     return (
         <div className="col-lg-3">
-            <aside className="sidebar static left">
-                <div className="widget d-none d-sm-block">
+            <aside className="sidebar static left d-none d-sm-none d-lg-block">
+                <div className="widget">
                     <h4 className="widget-title">Faza Nurfaizi</h4>
                     <ul className="naves">
                         <li>

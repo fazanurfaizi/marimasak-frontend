@@ -10,6 +10,7 @@ import {
   faGlobeAsia,
   faUser,
   faPencilAlt,
+  faHeart
 } from '@fortawesome/free-solid-svg-icons'
 import MobileNavbar from './components/MobileNavbar'
 import Navbar from './components/Navbar'
@@ -29,7 +30,8 @@ library.add(
   faComment,
   faGlobeAsia,
   faUser,
-  faPencilAlt
+  faPencilAlt,
+  faHeart
 )
 
 function App() {

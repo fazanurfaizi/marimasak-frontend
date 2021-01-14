@@ -101,7 +101,7 @@ section {
 }
 
 .gap2 {
-    padding: 30px 0;
+    padding: 20px 0;
     position: relative;
 }
 
@@ -1446,7 +1446,7 @@ form button {
 }
 
 .we-video-info > ul li span.like {
-    color: green;
+    color: red;    
     cursor: pointer;
     transition: all 0.2s linear 0s;
 }
