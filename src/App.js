@@ -14,6 +14,8 @@ import {
 import MobileNavbar from './components/MobileNavbar'
 import Navbar from './components/Navbar'
 import SideSetting from './components/SideSetting'
+import LeftSidebar from './components/Sidebar/LeftSidebar'
+import RightSidebar from './components/Sidebar/RightSidebar'
 
 import Home from './views/Home'
 
@@ -34,8 +36,24 @@ function App() {
   return (
     <div className="theme-layout">
       <MobileNavbar />
-      <Navbar />
-      <Home />
+      <Navbar />      
+      <section>
+            <div className="gap2 gray-bg">
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="row merged20" id="page-contents">
+                                <LeftSidebar />
+                                <div className="col-lg-6">
+                                  <Home />
+                                </div>
+                                <RightSidebar />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
       <SideSetting />
     </div>
   );

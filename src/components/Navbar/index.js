@@ -2,7 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import logo from '../../assets/images/logo.png'
-import annieProfile from '../../assets/images/thumb-5.jpg'
+import annieProfile from '../../assets/images/Annie.PNG'
 
 const Navbar = () => {
 
@@ -25,13 +25,12 @@ const Navbar = () => {
                     <ul className="setting-area">
                         <li>
                             <a href="newsfeed.html" title="Home" data-ripple="">
-                                <FontAwesomeIcon icon="home" />
+                                <i className="ti-home"></i>
                             </a>
                         </li>
                         <li>
                             <a href="#" title="Notification" data-ripple="">
-                                <FontAwesomeIcon icon="bell" />
-                                <span>20</span>
+                                <i className="ti-bell"></i><span>20</span>
                             </a>
                             <div className="dropdowns">
                                 <span>4 New Notifications</span>
@@ -97,7 +96,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <a href="#" title="Messages" data-ripple="">
-                                <FontAwesomeIcon icon="comment" /><span>12</span></a>
+                                <i className="ti-comment"></i><span>12</span></a>
                             <div className="dropdowns">
                                 <span>5 New Messages</span>
                                 <ul className="drops-menu">
@@ -184,7 +183,7 @@ const Navbar = () => {
                         </li>
                         <li>
                             <a href="#" title="Languages" data-ripple="">
-                            <FontAwesomeIcon icon="globe-asia" />
+                                <FontAwesomeIcon icon="globe-asia" />
                             </a>
                             <div className="dropdowns languages">
                                 <a href="#" title=""><i className="ti-check"></i>English</a>
@@ -195,7 +194,7 @@ const Navbar = () => {
                         </li>
                     </ul>
                     <div className="user-img">
-                        <img src={annieProfile} alt="" />
+                        <img src={annieProfile} alt="" width="40" />
                         <span className="status f-online"></span>
                         <div className="user-setting">                            
                             <a href="#" title=""><i className="ti-user"></i> view profile</a>

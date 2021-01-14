@@ -1,4 +1,4 @@
-const Sidebar = () => {
+const LeftSidebar = () => {
     return (
         <div className="col-lg-3">
             <aside className="sidebar static left">
@@ -56,4 +56,4 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar
+export default LeftSidebar
