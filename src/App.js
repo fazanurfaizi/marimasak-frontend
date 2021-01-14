@@ -15,6 +15,8 @@ import MobileNavbar from './components/MobileNavbar'
 import Navbar from './components/Navbar'
 import SideSetting from './components/SideSetting'
 
+import Home from './views/Home'
+
 library.add(
   fab, 
   faAlignJustify, 
@@ -33,6 +35,7 @@ function App() {
     <div className="theme-layout">
       <MobileNavbar />
       <Navbar />
+      <Home />
       <SideSetting />
     </div>
   );
