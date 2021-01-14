@@ -1800,6 +1800,13 @@ for some reason nth-child(1) is always busy and elements starting from 2 */
     text-transform: capitalize;
 }
 
+.we-comet li button.showmore {
+    display: table;
+    font-size: 12px;
+    margin: 0 auto;
+    text-transform: capitalize;
+}
+
 .we-comet > li ul li:last-child {
     margin-bottom: 0;
 }
