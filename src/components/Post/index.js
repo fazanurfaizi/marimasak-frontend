@@ -25,20 +25,14 @@ const Post = ({
                     <div className="post-meta">
                         <img src={thumbnail} alt="" />
                         <div className="we-video-info">
-                            <ul>
-                                <li>
-                                    <span className="views" data-toggle="tooltip" title="views">
-                                        <i className="fa fa-eye"></i>
-                                        <ins>{likesCount}</ins>
-                                    </span>
-                                </li>
+                            <ul>     
+                                <PostLike totalLikes={likesCount} />                              
                                 <li>
                                     <span className="comment" data-toggle="tooltip" title="Comments">
                                         <i className="fa fa-comments-o"></i>
                                         <ins>{commentsCount}</ins>
                                     </span>
-                                </li>
-                                <PostLike />                  
+                                </li>                                               
                                 <SocialShare />
                             </ul>
                         </div>

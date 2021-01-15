@@ -42,7 +42,7 @@ const CommentList = () => {
             />
             <ul>
                 { list.map((item, index) => (
-                    <li>
+                    <li key={`comment-${index}`}>
                         <Comment
                             key={index}
                             name={item.name}

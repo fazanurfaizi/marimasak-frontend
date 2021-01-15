@@ -1,4 +1,6 @@
-import React from 'react'
+/* eslint-disable jsx-a11y/anchor-is-valid */
+import React, { useState, useEffect } from 'react'
+import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import logo from '../../assets/images/logo.png'
@@ -6,13 +8,24 @@ import annieProfile from '../../assets/images/Annie.PNG'
 
 const Navbar = () => {
 
+    const [currentRoute, setCurrentRoute] = useState('');
+    const [openNotification, setOpenNotification] = useState(false);
+    const [openMessage, setOpenMessage] = useState(false);
+    const [openLanguage, setOpenLanguage] = useState(false);
+    const [openProfile, setOpenProfile] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        setCurrentRoute(location.pathname)
+    }, [currentRoute, location.pathname])
+
     return (
         <div className="container-fluid">
             <div className="topbar stick">
                 <div className="logo">
-                    <a href="/" title="Marimasak">
+                    <Link to="/" title="Marimasak">
                         <img src={logo} alt="Marimasak" />
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="top-area">
@@ -22,17 +35,17 @@ const Navbar = () => {
                             <button data-ripple><i className="ti-search"></i></button>
                         </form>
                     </div>                    
-                    <ul className="setting-area">
+                    <ul className="setting-area">                        
                         <li>
-                            <a href="newsfeed.html" title="Home" data-ripple="">
+                            <Link to="/">
                                 <i className="ti-home"></i>
-                            </a>
+                            </Link>                            
                         </li>
                         <li>
-                            <a href="#" title="Notification" data-ripple="">
+                            <a style={{ 'cursor': 'pointer' }} title="Notification" onClick={() => setOpenNotification(!openNotification)}>
                                 <i className="ti-bell"></i><span>20</span>
                             </a>
-                            <div className="dropdowns">
+                            <div className={openNotification ? 'dropdowns active' : 'dropdowns'}>
                                 <span>4 New Notifications</span>
                                 <ul className="drops-menu">
                                     <li>
@@ -95,9 +108,11 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li>
-                            <a href="#" title="Messages" data-ripple="">
-                                <i className="ti-comment"></i><span>12</span></a>
-                            <div className="dropdowns">
+                            <a style={{ 'cursor': 'pointer' }} title="Messages" onClick={() => setOpenMessage(!openMessage)}>
+                                <i className="ti-comment"></i>
+                                <span>12</span>
+                            </a>
+                            <div className={openMessage ? 'dropdowns active' : 'dropdowns'}>
                                 <span>5 New Messages</span>
                                 <ul className="drops-menu">
                                     <li>
@@ -182,10 +197,10 @@ const Navbar = () => {
                             </div>
                         </li>
                         <li>
-                            <a href="#" title="Languages" data-ripple="">
+                            <a style={{ cursor: 'pointer' }} title="Languages" onClick={() => setOpenLanguage(!openLanguage)}>
                                 <FontAwesomeIcon icon="globe-asia" />
                             </a>
-                            <div className="dropdowns languages">
+                            <div className={openLanguage ? 'dropdowns languages active' : 'dropdowns languages'}>
                                 <a href="#" title=""><i className="ti-check"></i>English</a>
                                 <a href="#" title="">Arabic</a>
                                 <a href="#" title="">Dutch</a>
@@ -193,10 +208,10 @@ const Navbar = () => {
                             </div>
                         </li>
                     </ul>
-                    <div className="user-img">
+                    <div className="user-img" onClick={() => setOpenProfile(!openProfile)}>
                         <img src={annieProfile} alt="" width="40" />
                         <span className="status f-online"></span>
-                        <div className="user-setting">                            
+                        <div className={openProfile ? 'user-setting active' : 'user-setting'}>                            
                             <a href="#" title=""><i className="ti-user"></i> view profile</a>
                             <a href="#" title=""><i className="ti-pencil-alt"></i>edit profile</a>
                             <a href="#" title=""><i className="ti-target"></i>activity log</a>

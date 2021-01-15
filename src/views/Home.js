@@ -1,4 +1,5 @@
 import Post from '../components/Post'
+import RightSidebar from '../components/Sidebar/RightSidebar'
 
 import photo from '../assets/images/Annie.PNG'
 import post1 from '../assets/images/435816.jpg'
@@ -38,20 +39,25 @@ const Home = () => {
     ]
 
     return (
-        <div className="loadMore">
-            {data.map((item, index) => (
-                <Post 
-                    key={index}
-                    name={item.name}
-                    profile={item.profile}
-                    thumbnail={item.thumbnail}
-                    likesCount={item.likesCount}
-                    commentsCount={item.commentsCount}
-                    body={item.body}
-                    publishedAt={item.publishedAt}
-                />
-            ))}        
-        </div>
+        <>
+            <div className="col-lg-6">
+                <div className="loadMore">
+                    {data.map((item, index) => (
+                        <Post 
+                            key={index}
+                            name={item.name}
+                            profile={item.profile}
+                            thumbnail={item.thumbnail}
+                            likesCount={item.likesCount}
+                            commentsCount={item.commentsCount}
+                            body={item.body}
+                            publishedAt={item.publishedAt}
+                        />
+                    ))}        
+                </div>
+            </div>
+            <RightSidebar />
+        </>
     )
 }
 

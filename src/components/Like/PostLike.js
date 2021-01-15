@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const PostLike = () => {
+const PostLike = ({ totalLikes }) => {
 
-    const [likes, setLikes] = useState(0);    
+    const [likes, setLikes] = useState(totalLikes);    
     const [liked, setLiked] = useState(false);
 
     const handleLikes = () => {

@@ -1,3 +1,5 @@
+import { BrowserRouter } from 'react-router-dom'
+
 import AppLayout from './layout/AppLayout'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -31,7 +33,9 @@ library.add(
 
 function App() {
   return (
-    <AppLayout />
+    <BrowserRouter>
+      <AppLayout />            
+    </BrowserRouter>
   );
 }
 
