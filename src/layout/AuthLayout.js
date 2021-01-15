@@ -7,7 +7,7 @@ const AuthLayout = () => {
         <div className="theme-layout">
             <div className="container-fluid pdng0">
                 <div className="row merged">
-                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-none d-sm-none d-lg-block">
                         <div className="land-featurearea">
                             <div className="land-meta">
                                 <h1>Marimasak</h1>
@@ -22,7 +22,7 @@ const AuthLayout = () => {
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                        <div className="log-reg-area">
+                        <div className="login-reg-bg">
                             <AuthRoutes />
                         </div>
                     </div>
