@@ -1,8 +1,6 @@
-import AuthRoutes from '../routes/AuthRoutes'
-
 import Logo from '../assets/images/wink.png'
 
-const AuthLayout = () => {
+const AuthLayout = ({ children }) => {
     return (
         <div className="theme-layout">
             <div className="container-fluid pdng0">
@@ -23,7 +21,7 @@ const AuthLayout = () => {
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                         <div className="login-reg-bg">
-                            <AuthRoutes />
+                            {children}
                         </div>
                     </div>
                 </div>

@@ -3,9 +3,7 @@ import Navbar from '../components/Navbar'
 import SideSetting from '../components/SideSetting'
 import LeftSidebar from '../components/Sidebar/LeftSidebar'
 
-import AppRoutes from '../routes/AppRoutes'
-
-const AppLayout = () => {
+const AppLayout = ({ children }) => {
     return (
         <div className="theme-layout">
             <MobileNavbar />
@@ -17,7 +15,7 @@ const AppLayout = () => {
                             <div className="col-lg-12">
                                 <div className="row merged20" id="page-contents">
                                     <LeftSidebar />
-                                    <AppRoutes />                                    
+                                    {children}                                 
                                 </div>
                             </div>
                         </div>

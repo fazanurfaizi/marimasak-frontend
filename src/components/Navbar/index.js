@@ -249,7 +249,10 @@ const Navbar = () => {
                             <a href="#" title=""><i className="ti-user"></i> view profile</a>
                             <a href="#" title=""><i className="ti-pencil-alt"></i>edit profile</a>
                             <a href="#" title=""><i className="ti-target"></i>activity log</a>
-                            <a href="#" title=""><i className="ti-settings"></i>account setting</a>
+                            <Link to="/settings-basic" title="settings">
+                                <i className="ti-settings"></i>
+                                settings
+                            </Link>                        
                             <a href="#" title=""><i className="ti-power-off"></i>log out</a>
                         </div>
                     </div>

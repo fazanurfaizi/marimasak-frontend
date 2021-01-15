@@ -1,6 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import logo from '../../assets/images/logo.png'
-import { slide as Menu } from 'react-burger-menu'
 
 const MobileNavbar = () => {
     return (
