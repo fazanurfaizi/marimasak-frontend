@@ -1,6 +1,7 @@
 const SideSetting = () => {
     return (
         <div className="side-panel">
+            {/* Add 'active' class in side-panel */}
             <h4 className="panel-title">General Setting</h4>
             <form method="post">
                 <div className="setting-row">

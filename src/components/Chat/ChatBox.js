@@ -2,7 +2,7 @@ import profile from '../../assets/images/Annie.PNG'
 
 const ChatBox = () => {
     return (
-        <div className="chat-box">
+        <div className="chat-box show">
             <div className="chat-head">
                 <span className="status f-online"></span>
                 <h6>Bucky Barnes</h6>
