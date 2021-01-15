@@ -1,6 +1,7 @@
 import { BrowserRouter } from 'react-router-dom'
 
 import AppLayout from './layout/AppLayout'
+import AuthLayout from './layout/AuthLayout'
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
@@ -34,7 +35,7 @@ library.add(
 function App() {
   return (
     <BrowserRouter>
-      <AppLayout />            
+      <AuthLayout />            
     </BrowserRouter>
   );
 }
