@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useDetectClickOutside } from 'react-detect-click-outside';
 
 import logo from '../../assets/images/logo.png'
 import annieProfile from '../../assets/images/Annie.PNG'
@@ -9,12 +10,33 @@ import annieProfile from '../../assets/images/Annie.PNG'
 const Navbar = () => {
 
     const [currentRoute, setCurrentRoute] = useState('');
-    const [openNotification, setOpenNotification] = useState(false);
+    const [openNotification, setOpenNotification] = useState(false);    
     const [openMessage, setOpenMessage] = useState(false);
     const [openLanguage, setOpenLanguage] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
+    const [language, setLanguage] = useState('english');
     const location = useLocation();
 
+    const closeNotification = () => {
+        setOpenNotification(false)
+    }
+    const notificationRef = useDetectClickOutside({ onTriggered: closeNotification })
+
+    const closeMessage = () => {
+        setOpenMessage(false)
+    }
+    const messageRef = useDetectClickOutside({ onTriggered: closeMessage })
+
+    const closeLanguage = () => {
+        setOpenLanguage(false)
+    }
+    const languageRef = useDetectClickOutside({ onTriggered: closeLanguage })
+
+    const closeProfile = () => {
+        setOpenProfile(false)
+    }
+    const profileRef = useDetectClickOutside({ onTriggered: closeProfile })
+       
     useEffect(() => {
         setCurrentRoute(location.pathname)
     }, [currentRoute, location.pathname])
@@ -41,7 +63,7 @@ const Navbar = () => {
                                 <i className="ti-home"></i>
                             </Link>                            
                         </li>
-                        <li>
+                        <li ref={notificationRef}>
                             <a style={{ 'cursor': 'pointer' }} title="Notification" onClick={() => setOpenNotification(!openNotification)}>
                                 <i className="ti-bell"></i><span>20</span>
                             </a>
@@ -49,7 +71,7 @@ const Navbar = () => {
                                 <span>4 New Notifications</span>
                                 <ul className="drops-menu">
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>sarah Loren</h6>
@@ -60,7 +82,7 @@ const Navbar = () => {
                                         <span className="tag green">New</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Jhon doe</h6>
@@ -71,7 +93,7 @@ const Navbar = () => {
                                         <span className="tag red">Reply</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Andrew</h6>
@@ -82,7 +104,7 @@ const Navbar = () => {
                                         <span className="tag blue">Unseen</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Tom cruse</h6>
@@ -93,7 +115,7 @@ const Navbar = () => {
                                         <span className="tag">New</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Amy</h6>
@@ -104,10 +126,10 @@ const Navbar = () => {
                                         <span className="tag">New</span>
                                     </li>
                                 </ul>
-                                <a href="notifications.html" title="" className="more-mesg">view more</a>
+                                <a href="#" title="" className="more-mesg">view more</a>
                             </div>
                         </li>
-                        <li>
+                        <li ref={messageRef}>
                             <a style={{ 'cursor': 'pointer' }} title="Messages" onClick={() => setOpenMessage(!openMessage)}>
                                 <i className="ti-comment"></i>
                                 <span>12</span>
@@ -116,7 +138,7 @@ const Navbar = () => {
                                 <span>5 New Messages</span>
                                 <ul className="drops-menu">
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>sarah Loren</h6>
@@ -127,7 +149,7 @@ const Navbar = () => {
                                         <span className="tag green">New</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Jhon doe</h6>
@@ -138,7 +160,7 @@ const Navbar = () => {
                                         <span className="tag red">Reply</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Andrew</h6>
@@ -149,7 +171,7 @@ const Navbar = () => {
                                         <span className="tag blue">Unseen</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Tom cruse</h6>
@@ -160,7 +182,7 @@ const Navbar = () => {
                                         <span className="tag">New</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Amy</h6>
@@ -171,7 +193,7 @@ const Navbar = () => {
                                         <span className="tag">New</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Amy</h6>
@@ -182,7 +204,7 @@ const Navbar = () => {
                                         <span className="tag">New</span>
                                     </li>
                                     <li>
-                                        <a href="notifications.html" title="">
+                                        <a href="#" title="">
                                             <img src={annieProfile} alt="" />
                                             <div className="mesg-meta">
                                                 <h6>Amy</h6>
@@ -193,22 +215,34 @@ const Navbar = () => {
                                         <span className="tag">New</span>
                                     </li>
                                 </ul>
-                                <a href="messages.html" title="" className="more-mesg">view more</a>
+                                <a href="#" title="" className="more-mesg">view more</a>
                             </div>
                         </li>
-                        <li>
+                        <li ref={languageRef}>
                             <a style={{ cursor: 'pointer' }} title="Languages" onClick={() => setOpenLanguage(!openLanguage)}>
                                 <FontAwesomeIcon icon="globe-asia" />
                             </a>
                             <div className={openLanguage ? 'dropdowns languages active' : 'dropdowns languages'}>
-                                <a href="#" title=""><i className="ti-check"></i>English</a>
-                                <a href="#" title="">Arabic</a>
-                                <a href="#" title="">Dutch</a>
-                                <a href="#" title="">French</a>
+                                <a href="#" title="">
+                                    { language === 'english' ? <i className="ti-check"></i> : '' }
+                                    English
+                                </a>
+                                <a href="#" title="">
+                                    { language === 'arabic' ? <i className="ti-check"></i> : '' }
+                                    Arabic
+                                </a>
+                                <a href="#" title="">
+                                    { language === 'dutch' ? <i className="ti-check"></i> : '' }
+                                    Dutch
+                                </a>
+                                <a href="#" title="">
+                                    { language === 'indonesia' ? <i className="ti-check"></i> : '' }
+                                    Indonesia
+                                </a>
                             </div>
                         </li>
                     </ul>
-                    <div className="user-img" onClick={() => setOpenProfile(!openProfile)}>
+                    <div className="user-img" onClick={() => setOpenProfile(!openProfile)} ref={profileRef}>
                         <img src={annieProfile} alt="" width="40" />
                         <span className="status f-online"></span>
                         <div className={openProfile ? 'user-setting active' : 'user-setting'}>                            
