@@ -13,6 +13,9 @@ import Login from '../views/Auth/Login'
 import Register from '../views/Auth/Register'
 import ForgotPassword from '../views/Auth/ForgotPassword'
 
+// Profile Pages
+import Profile from '../views/Profile'
+
 // Setting Pages
 import BasicSetting from '../views/Setting/BasicSetting'
 import BlockingSetting from '../views/Setting/BlockingSetting'
@@ -27,108 +30,145 @@ import PrivacySetting from '../views/Setting/PrivacySetting'
 import SecuritySetting from '../views/Setting/SecuritySetting'
 import StorySetting from '../views/Setting/StorySetting'
 import TimelineSetting from '../views/Setting/TimelineSetting'
+import NotFound from '../views/Error/NotFound'
+import ErrorLayout from '../layout/ErrorLayout'
+import ProfileLayout from '../layout/ProfileLayout'
 
 export const routes = [
     { 
         path: '/', 
         component: Home, 
-        layout: AppLayout 
+        layout: AppLayout,
+        authentication: false 
     },
     {
         path: '/friends', 
         component: FriendsTimeline, 
-        layout: AppLayout 
+        layout: AppLayout,
+        authentication: true
     },
     { 
         path: '/notifications', 
         component: Notifications, 
-        layout: AppLayout 
+        layout: AppLayout,
+        authentication: true
     },
     { 
         path: '/messages', 
         component: Messages, 
-        layout: AppLayout 
+        layout: AppLayout,
+        authentication: true 
     },
 
     { 
         path: '/login', 
         component: Login, 
-        layout: AuthLayout 
+        layout: AuthLayout,
+        authentication: false 
     },
     { 
         path: '/register', 
         component: Register, 
-        layout: AuthLayout 
+        layout: AuthLayout,
+        authentication: false
     },
     { 
         path: '/forgot-password', 
         component: ForgotPassword, 
-        layout: AuthLayout 
+        layout: AuthLayout,
+        authentication: false 
+    },
+
+    {
+        path: '/profile',
+        component: Profile,
+        layout: ProfileLayout,
+        authentication: true
     },
 
     { 
         path: '/settings-basic', 
         component: BasicSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-blocking', 
         component: BlockingSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-facerec', 
         component: FaceRegcognitionSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-info', 
         component: InfoSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-localization', 
         component: LocalizationSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-location', 
         component: LocationSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-mobile', 
         component: MobileSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-notifications', 
         component: NotificationSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-posts', 
         component: PostSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-privacy', 
         component: PrivacySetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-security', 
         component: SecuritySetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-stories', 
         component: StorySetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },
     { 
         path: '/settings-timeline', 
         component: TimelineSetting, 
-        layout: SettingLayout 
+        layout: SettingLayout,
+        authentication: true  
     },    
+
+    {
+        path: '*',
+        component: NotFound,
+        layout: ErrorLayout,
+        authentication: false
+    }
 ];

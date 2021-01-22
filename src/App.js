@@ -4,8 +4,8 @@ import { routes } from './routes'
 
 function App() {
   
-  const routeComponents = routes.map(({ path, component, layout }, key) => 
-    <AppRoute exact path={path} component={component} layout={layout} key={key} />
+  const routeComponents = routes.map(({ path, component, layout, authentication }, key) => 
+    <AppRoute exact path={path} component={component} layout={layout} authentication={authentication} key={key} />
   );
 
   return (

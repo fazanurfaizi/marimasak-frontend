@@ -246,9 +246,10 @@ const Navbar = () => {
                     <div className="user-img" onClick={() => setOpenProfile(!openProfile)} ref={profileRef}>
                         <img src={annieProfile} alt="" width="40" />
                         <span className="status f-online"></span>
-                        <div className={openProfile ? 'user-setting active' : 'user-setting'}>                            
-                            <a href="#" title=""><i className="ti-user"></i> view profile</a>
-                            <a href="#" title=""><i className="ti-pencil-alt"></i>edit profile</a>
+                        <div className={openProfile ? 'user-setting active' : 'user-setting'}>  
+                            <Link to="/profile" title="Profile">
+                                <i className="ti-user"></i> profile
+                            </Link>                            
                             <a href="#" title=""><i className="ti-target"></i>activity log</a>
                             <Link to="/settings-basic" title="settings">
                                 <i className="ti-settings"></i>

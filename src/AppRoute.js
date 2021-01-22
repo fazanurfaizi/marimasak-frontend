@@ -1,18 +1,31 @@
 import React from 'react'
-import { Route } from 'react-router-dom'
+import { Route, Redirect } from 'react-router-dom'
+
+const fakeAuth = {
+    isAuthenticated: true
+}
 
 const AppRoute = ({
     component: Component,
     layout: Layout,
+    authentication = false,
     ...rest
 }) => {
     return (
         <Route
             {...rest}
             render={props => (
-                <Layout>
-                    <Component {...props} />
-                </Layout>
+                authentication ? (fakeAuth.isAuthenticated ? (
+                    <Layout>
+                        <Component {...props} />
+                    </Layout>
+                ) : (
+                    <Redirect to="/login" />
+                )) : (
+                    <Layout>
+                        <Component {...props} />
+                    </Layout>
+                )
             )}
         />
     )
