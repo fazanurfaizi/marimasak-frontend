@@ -46,8 +46,8 @@ const FaceRecognitionSetting = () => {
                             <label htmlFor="switch05" data-on-label="ON" data-off-label="OFF"></label>
                         </div>
                         <div className="submit-btns">
-                            <button type="button" className="mtr-btn"><span>Cancel</span></button>
-                            <button type="button" className="mtr-btn"><span>Update</span></button>
+                            <button type="button" className="mtr-btn mr-2"><span>Cancel</span></button>
+                            <button type="button" className="mtr-btn ml-2"><span>Update</span></button>
                         </div>
                     </form>
                 </div>
