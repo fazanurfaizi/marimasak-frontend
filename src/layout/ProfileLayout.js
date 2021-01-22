@@ -1,11 +1,20 @@
+import ProfileHeader from '../components/ProfileHeader'
+
 const ProfileLayout = ({ children }) => {
     return (
         <div className="theme-layout">
-            <div className="container-fluid pdng0">
-                {children}
-            </div>
+            <ProfileHeader />
+            <section>
+                <div className="gap gray-bg">
+                    <div className="container-fluid">
+                        {children}
+                    </div>
+                </div>
+            </section>
         </div>
     )
 }
+
+
 
 export default ProfileLayout
