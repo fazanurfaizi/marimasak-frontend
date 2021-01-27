@@ -15,6 +15,9 @@ import ForgotPassword from '../views/Auth/ForgotPassword'
 
 // Profile Pages
 import Profile from '../views/Profile'
+import AboutProfile from '../views/Profile/AboutProfile'
+import FriendsProfile from '../views/Profile/FriendsProfile'
+import PhotosProfile from '../views/Profile/PhotosProfile'
 
 // Setting Pages
 import BasicSetting from '../views/Setting/BasicSetting'
@@ -80,8 +83,26 @@ export const routes = [
     },
 
     {
-        path: '/profile',
+        path: '/:username',
         component: Profile,
+        layout: ProfileLayout,
+        authentication: true
+    },
+    {
+        path: '/:username/about',
+        component: AboutProfile,
+        layout: ProfileLayout,
+        authentication: true
+    },
+    {
+        path: '/:username/photos',
+        component: PhotosProfile,
+        layout: ProfileLayout,
+        authentication: true
+    },
+    {
+        path: '/:username/friends',
+        component: FriendsProfile,
         layout: ProfileLayout,
         authentication: true
     },

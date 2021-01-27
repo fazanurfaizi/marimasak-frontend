@@ -1,24 +1,37 @@
+import React, { useState, useEffect } from 'react'
+import { Link, useRouteMatch, useParams } from 'react-router-dom'
 import backgroundImage from '../../assets/images/timeline-1.jpg'
 import annieProfile from '../../assets/images/Annie.PNG'
 
-const ProfileHeader = () => {
-    return (
-        <section>
+const ProfileHeader = ({ props }) => {    
+
+    let { url } = useRouteMatch();
+    let params = useParams();    
+
+    const [username, setUsername] = useState();
+
+    useEffect(() => {
+        setUsername(params.username)
+        return () => {
+            setUsername('')
+        }
+    }, [])    
+
+    return (        
+        <section>            
             <div className="feature-photo">
                 <figure>
-                    <img src={backgroundImage} alt="Background" />
+                    <img src={backgroundImage} alt=""/>
                 </figure>
                 <div className="add-btn">
-                    <span>1234 Followers</span>
-                    <a href="#" title="" data-ripple="">
-                        Add Friend
-                    </a>
+                    <span>1205 followers</span>
+                    <a href="#" title="" data-ripple="">Add Friend</a>
                 </div>
                 <form className="edit-phto">
                     <i className="fa fa-camera-retro"></i>
                     <label className="fileContainer">
-                        Edit Cocer Photo
-                        <input type="file" />
+                        Edit Cover Photo                        
+                    <input type="file"/>
                     </label>
                 </form>
                 <div className="container-fluid">
@@ -26,7 +39,7 @@ const ProfileHeader = () => {
                         <div className="col-lg-2 col-sm-3">
                             <div className="user-avatar">
                                 <figure>
-                                    <img src={annieProfile} alt="" />
+                                    <img src={annieProfile} alt="" style={{ 'maxHeight': '150px' }} />
                                     <form className="edit-phto">
                                         <i className="fa fa-camera-retro"></i>
                                         <label className="fileContainer">
@@ -41,21 +54,25 @@ const ProfileHeader = () => {
                             <div className="timeline-info">
                                 <ul>
                                     <li className="admin-name">
-                                    <h5>Janice Griffith</h5>
-                                    <span>Group Admin</span>
-                                    </li>
-                                    <li>
-                                        <a className="" href="time-line.html" title="" data-ripple="">time line</a>
-                                        <a className="active" href="timeline-photos.html" title="" data-ripple="">Photos</a>
-                                        <a className="" href="timeline-videos.html" title="" data-ripple="">Videos</a>
-                                        <a className="" href="timeline-friends.html" title="" data-ripple="">Friends</a>
-                                        <a className="" href="timeline-groups.html" title="" data-ripple="">Groups</a>
-                                        <a className="" href="about.html" title="" data-ripple="">about</a>
-                                        <a className="" href="#" title="" data-ripple="">more</a>
-                                    </li>
+                                        <h5>{username}</h5>                                    
+                                    </li>                                    
                                 </ul>
                             </div>
                         </div>
+                    </div>                    
+                </div>                
+            </div>
+            <div className="row">
+                <div className="row-lg-12 col-sm-12" align="center">
+                    <div className="timeline-info">
+                        <ul>
+                            <li>                                
+                                <Link title={username} to={{pathname: `/${username}`, query: {username}}}>{username}</Link>
+                                <Link title="About" to={{pathname: `/${username}/about`, query: {username}}}>About</Link>
+                                <Link title="Friends" to={{pathname: `/${username}/friends`, query: {username}}}>Friends</Link>
+                                <Link title="Photos" to={{pathname: `/${username}/photos`, query: {username}}}>Photos</Link>                                                                                       
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
