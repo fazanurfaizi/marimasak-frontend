@@ -83,25 +83,25 @@ export const routes = [
     },
 
     {
-        path: '/:username',
+        path: '/u/:username',
         component: Profile,
         layout: ProfileLayout,
         authentication: true
     },
     {
-        path: '/:username/about',
+        path: '/u/:username/about',
         component: AboutProfile,
         layout: ProfileLayout,
         authentication: true
     },
     {
-        path: '/:username/photos',
+        path: '/u/:username/photos',
         component: PhotosProfile,
         layout: ProfileLayout,
         authentication: true
     },
     {
-        path: '/:username/friends',
+        path: '/u/:username/friends',
         component: FriendsProfile,
         layout: ProfileLayout,
         authentication: true

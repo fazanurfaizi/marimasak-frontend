@@ -1,7 +1,24 @@
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { login } from '../../store/reducers/auth'
 import LinkButton from '../../templates/LinkButton'
 
-const Login = () => {
+const Login = ({ login }) => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [rememberMe, setRememberMe] = useState(false)
+    const [error, setError] = useState('')
+
+    const handleSubmitForm = () => {
+        if(email === "" || password === "") {
+            setError("Fields are required")
+            return;
+        }
+        login({ email, password })
+    }
+
     return (
         <div className="log-reg-area sign">
             <h2 className="log-title">Login</h2>
@@ -18,30 +35,55 @@ const Login = () => {
                 </p>
             <form method="post">
                 <div className="form-group">	
-                    <input type="text" id="input" required="required"/>
+                    <input 
+                        type="text" 
+                        id="input" 
+                        required="required"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
                     <label className="control-label" htmlFor="input">Username</label><i className="mtrl-select"></i>
                 </div>
                 <div className="form-group">	
-                    <input type="password" required="required"/>
+                    <input 
+                        type="password" 
+                        required="required"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                    />
                     <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select"></i>
                 </div>
                 <div className="checkbox">
                     <label>
-                    <input type="checkbox"/><i className="check-box"></i>Always Remember Me.
+                        <input 
+                            type="checkbox"
+                            checked={rememberMe}
+                            onClick={setRememberMe}
+                        />
+                        <i className="check-box"></i>Always Remember Me.
                     </label>
                 </div>
                 <Link to="/forgot-password" className="forgot-pwd" title="Forgot Password">
                     Forgot Password?
                 </Link>                                
                 <div className="submit-btns justify-content-between">
-                    <button className="mtr-btn signin mr-4" type="button">
+                    <button 
+                        className="mtr-btn signin mr-4" 
+                        type="button"
+                        onClick={handleSubmitForm}
+                    >
                         <span>Login</span>
                     </button>        
                     <LinkButton className="mtr-btn signup" to="/register">
                         <span>
                             Register
                         </span>
-                    </LinkButton>                                                
+                    </LinkButton>      
+                    {error && (
+                        <span onClick={() => setError(null)}>
+                            {error}
+                        </span>
+                    )}                                          
                 </div>
             </form>
         </div>

@@ -2,7 +2,7 @@ import MobileNavbar from '../components/MobileNavbar'
 import LeftSidebarSetting from '../components/Sidebar/LeftSidebarSetting'
 import Navbar from '../components/Navbar'
 
-const AppLayout = ({children}) => {
+const SettingLayout = ({children}) => {
     return (
         <div className="theme-layout">
             <MobileNavbar />            
@@ -25,4 +25,4 @@ const AppLayout = ({children}) => {
     )
 }
 
-export default AppLayout
+export default SettingLayout

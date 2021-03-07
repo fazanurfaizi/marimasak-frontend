@@ -59,7 +59,7 @@ const ProfileHeader = () => {
                                         aria-current={currentLocation === `${username}` ? 'page' : '' }         
                                         className={currentLocation === `${username}` ? 'active ' : '' }                            
                                         title="Posts" 
-                                        to={{pathname: `/${username}`, query: {username}}}
+                                        to={{pathname: `/u/${username}`, query: {username}}}
                                     >
                                         Posts
                                     </Link>
@@ -67,7 +67,7 @@ const ProfileHeader = () => {
                                         aria-current={currentLocation === `about` ? 'page' : '' }         
                                         className={currentLocation === `about` ? 'active ' : '' }   
                                         title="About" 
-                                        to={{pathname: `/${username}/about`, query: {username}}}
+                                        to={{pathname: `/u/${username}/about`, query: {username}}}
                                     >
                                         About
                                     </Link>
@@ -75,7 +75,7 @@ const ProfileHeader = () => {
                                         aria-current={currentLocation === `friends` ? 'page' : '' }         
                                         className={currentLocation === `friends` ? 'active ' : '' }   
                                         title="Friends" 
-                                        to={{pathname: `/${username}/friends`, query: {username}}}
+                                        to={{pathname: `/u/${username}/friends`, query: {username}}}
                                     >
                                         Friends
                                     </Link>
@@ -83,7 +83,7 @@ const ProfileHeader = () => {
                                         aria-current={currentLocation === `photos` ? 'page' : '' }         
                                         className={currentLocation === 'photos' ? 'active ' : '' }   
                                         title="Photos" 
-                                        to={{pathname: `/${username}/photos`, query: {username}}}
+                                        to={{pathname: `/u/${username}/photos`, query: {username}}}
                                     >
                                         Photos
                                     </Link>                                                                                       

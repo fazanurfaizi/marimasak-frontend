@@ -246,7 +246,7 @@ const Navbar = () => {
                     <img src={annieProfile} alt="" width="40" />
                     <span className="status f-online"></span>
                     <div className={openProfile ? 'user-setting active' : 'user-setting'}>  
-                        <Link to="/profile" title="Profile">
+                        <Link to="/u/profile" title="Profile">
                             <i className="ti-user"></i> profile
                         </Link>                            
                         <Link to="/settings-basic" title="activity log">
