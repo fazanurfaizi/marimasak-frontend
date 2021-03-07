@@ -10,7 +10,7 @@ const ProfileLayout = ({ children }) => {
             <ProfileHeader />
             <section>
                 <div className="gap gray-bg">
-                    <div className="container-fluid">
+                    <div className="container">
                         {children}
                     </div>
                 </div>
