@@ -216,6 +216,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .merged.row > div {
@@ -516,6 +517,20 @@ header.sticky {
     vertical-align: middle;
     background-position: top;
     width: 100%;
+}
+.land-featurearea .ikon{
+    margin-left: 90%;
+    display:flex;
+    transform:translateY(80%);
+    flex-direction: column;
+}
+.land-featurearea .ikon a{
+    padding:8px;
+    margin:10px 5px;
+    border-radius:80px;
+    background:white;
+    color:black;
+    text-decoration: none;
 }
 .land-featurearea img{
     width: 1200px;
