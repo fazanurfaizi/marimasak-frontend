@@ -12,6 +12,7 @@ const Navbar = () => {
 
     const [currentRoute, setCurrentRoute] = useState('');
     const [openNotification, setOpenNotification] = useState(false);    
+    const [openDetMsg, setOpenDetMsg] = useState(false);    
     const [openMessage, setOpenMessage] = useState(false);
     const [openLanguage, setOpenLanguage] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
@@ -20,6 +21,9 @@ const Navbar = () => {
 
     const closeNotification = () => {
         setOpenNotification(false)
+    }
+    const closeChat = () => {
+        setOpenDetMsg(false)
     }
     const notificationRef = useDetectClickOutside({ onTriggered: closeNotification })
 
@@ -70,7 +74,7 @@ const Navbar = () => {
                         <div className={openNotification ? 'dropdowns active' : 'dropdowns'}>
                             <span>4 New Notifications</span>
                             <ul className="drops-menu">
-                                <li>
+                                <li  onClick={() => setOpenDetMsg(!openDetMsg)}>
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">

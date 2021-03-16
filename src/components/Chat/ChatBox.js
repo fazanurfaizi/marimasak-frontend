@@ -2,6 +2,7 @@ import profile from '../../assets/images/Annie.PNG'
 
 const ChatBox = () => {
     return (
+        // <div className={openMessage ? "chat-box show" : 'chat-box'}>
         <div className="chat-box show">
             <div className="chat-head">
                 <span className="status f-online"></span>

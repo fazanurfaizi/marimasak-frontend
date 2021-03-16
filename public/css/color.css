@@ -7,7 +7,7 @@
 .product-caro .owl-next:hover:before,
 .log-reg-area form .forgot-pwd,
 .log-reg-area form .already-have,
-.log-reg-area > p a,
+.log-reg-area form p a,
 .top-area > ul > li > a > span,
 .timeline-info > ul li a.active,
 .timeline-info > ul li a:hover,
@@ -147,7 +147,7 @@ button.submit-checkout,
 a.addnewforum,
 .apply-bttons > a
 {
-	background: #088dcd;
+	background: #fdb827;
 }
 
 

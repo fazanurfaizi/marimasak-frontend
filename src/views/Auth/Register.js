@@ -4,21 +4,10 @@ const Register = () => {
     return (
         <div className="log-reg-area">
             <h2 className="log-title">Register</h2>
-            <p>
-                Don’t use Winku Yet? 
-                {' '}     
-                <a href="https://www.marimasak.com" title="marimasak.com" target="_blank" rel="noreferrer">
-                    Take the tour
-                </a>               
-                {' '} or {' '}
-                <Link to="/register" title="Register">
-                    Join now
-                </Link>
-            </p>
             <form method="post">
                 <div className="form-group">	
                     <input type="text" required="required" />
-                    <label className="control-label" htmlFor="input">First & Last Name</label>
+                    <label className="control-label" htmlFor="input">Full Name</label>
                     <i className="mtrl-select"></i>
                 </div>
                 <div className="form-group">	
@@ -49,7 +38,7 @@ const Register = () => {
                     <input type="text" required="required" />
                     <label className="control-label" htmlFor="input">
                         <a href="https://wpkixx.com/cdn-cgi/l/email-protection" className="__cf_email__" data-cfemail="6c29010d05002c">
-                            [email&#160;protected]
+                            Email
                         </a>
                     </label>
                     <i className="mtrl-select"></i>
@@ -61,12 +50,17 @@ const Register = () => {
                         Accept Terms & Conditions ?
                     </label>
                 </div>
-                <Link to="/login" className="already-have" title="Login">
-                    Already have an account
-                </Link>                
                 <div className="submit-btns">
                     <button className="mtr-btn signup" type="button"><span>Register</span></button>
                 </div>
+                <p>
+                Already have an account? 
+                    {' '} 
+                    <Link to="/login" title="Login">
+                        Join now
+                    </Link>
+                </p>
+
             </form>
         </div>
     )

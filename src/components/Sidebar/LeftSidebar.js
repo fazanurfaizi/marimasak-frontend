@@ -7,7 +7,7 @@ const LeftSidebar = () => {
                 <div className="widget">
                     <NavLink to="/friends" className="widget-title" title="profile">Faza Nurfaizi</NavLink>                              
                     <ul className="naves">                        
-                        <li>
+                        <li className="aktif">
                             <i className="ti-home"></i>
                             <NavLink to="/" title="home">home</NavLink>                            
                         </li>                        
