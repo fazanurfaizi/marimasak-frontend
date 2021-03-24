@@ -532,6 +532,10 @@ header.sticky {
     color:black;
     text-decoration: none;
 }
+.ikon a:hover i{
+    text-shadow: 1px 1px black;
+    /* color:black; */
+}
 .land-featurearea img{
     width: 1200px;
     position: absolute;
@@ -542,11 +546,10 @@ header.sticky {
 .land-meta {
     position: absolute;
     /* top: 50%; */
-    transform: translatex(50%);
-    left:10%;
+    transform: translatex(30%);
+    /* left:10%; */
     z-index: 1;
     text-shadow: 0px 0px 2px black;
-    justify-content:right;
     width: 100%;
     color:var(--kuning);    
 }
@@ -554,7 +557,10 @@ header.sticky {
 .land-meta > h1 {
     font-family: hobo std;
 }
+.land-meta h1:first-child {
+    color:white;
 
+}
 .land-meta > p {
     color: #fff;
     letter-spacing: 0.5px;
