@@ -5,13 +5,14 @@ import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDetectClickOutside } from 'react-detect-click-outside';
 
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/logo1.png'
 import annieProfile from '../../assets/images/Annie.PNG'
 
 const Navbar = () => {
 
     const [currentRoute, setCurrentRoute] = useState('');
     const [openNotification, setOpenNotification] = useState(false);    
+    const [openDetMsg, setOpenDetMsg] = useState(false);    
     const [openMessage, setOpenMessage] = useState(false);
     const [openLanguage, setOpenLanguage] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
@@ -20,6 +21,9 @@ const Navbar = () => {
 
     const closeNotification = () => {
         setOpenNotification(false)
+    }
+    const closeChat = () => {
+        setOpenDetMsg(false)
     }
     const notificationRef = useDetectClickOutside({ onTriggered: closeNotification })
 
@@ -70,12 +74,12 @@ const Navbar = () => {
                         <div className={openNotification ? 'dropdowns active' : 'dropdowns'}>
                             <span>4 New Notifications</span>
                             <ul className="drops-menu">
-                                <li>
+                                <li  onClick={() => setOpenDetMsg(!openDetMsg)}>
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
-                                            <h6>sarah Loren</h6>
-                                            <span>Hi, how r u dear ...?</span>
+                                            <h6>Fachri</h6>
+                                            <span>Menyukai resep anda.</span>
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
@@ -85,45 +89,23 @@ const Navbar = () => {
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
-                                            <h6>Jhon doe</h6>
-                                            <span>Hi, how r u dear ...?</span>
+                                            <h6>Taufik</h6>
+                                            <span>Menyukai resep anda.</span>
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
-                                    <span className="tag red">Reply</span>
+                                    <span className="tag red">New</span>
                                 </li>
                                 <li>
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
-                                            <h6>Andrew</h6>
-                                            <span>Hi, how r u dear ...?</span>
+                                            <h6>Daffa</h6>
+                                            <span>Menyukai resep anda.</span>
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
-                                    <span className="tag blue">Unseen</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Tom cruse</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
+                                    <span className="tag red">New</span>
                                 </li>
                             </ul>
                             <a href="#" title="" className="more-mesg">view more</a>
@@ -141,8 +123,8 @@ const Navbar = () => {
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
-                                            <h6>sarah Loren</h6>
-                                            <span>Hi, how r u dear ...?</span>
+                                            <h6>Aipp</h6>
+                                            <span>Cobain resep baru saya nih! Pasti enak.</span>
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
@@ -152,67 +134,12 @@ const Navbar = () => {
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
-                                            <h6>Jhon doe</h6>
-                                            <span>Hi, how r u dear ...?</span>
+                                            <h6>Taufik</h6>
+                                            <span>Za, ini kok resepmu pahit ya? haha</span>
                                             <i>2 min ago</i>
                                         </div>
                                     </a>
                                     <span className="tag red">Reply</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Andrew</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag blue">Unseen</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Tom cruse</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
                                 </li>
                             </ul>
                             <a href="#" title="" className="more-mesg">view more</a>
@@ -226,14 +153,6 @@ const Navbar = () => {
                             <a href="#" title="">
                                 { language === 'english' ? <i className="ti-check"></i> : '' }
                                 English
-                            </a>
-                            <a href="#" title="">
-                                { language === 'arabic' ? <i className="ti-check"></i> : '' }
-                                Arabic
-                            </a>
-                            <a href="#" title="">
-                                { language === 'dutch' ? <i className="ti-check"></i> : '' }
-                                Dutch
                             </a>
                             <a href="#" title="">
                                 { language === 'indonesia' ? <i className="ti-check"></i> : '' }

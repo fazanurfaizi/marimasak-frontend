@@ -20,79 +20,7 @@ const Messages = () => {
                                     <span className="status f-online"></span>
                                 </figure>
                                 <div className="people-name">
-                                    <span>Molly cyrus</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status f-away"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>Andrew</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status f-online"></span>
-                                </figure>                                
-                                <div className="people-name">
-                                    <span>jason bourne</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status off-online"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>Sarah Grey</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status f-online"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>bill doe</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status f-away"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>shen cornery</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status off-online"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>kill bill</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status f-online"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>jasmin walia</span>
-                                </div>
-                            </li>
-                            <li>                                
-                                <figure>
-                                    <img src={profile} alt="annie" />
-                                    <span className="status f-online"></span>
-                                </figure>
-                                <div className="people-name">
-                                    <span>neclos cage</span>
+                                    <span>Aipp</span>
                                 </div>
                             </li>
                         </ul>
@@ -101,50 +29,38 @@ const Messages = () => {
                                 <figure>
                                     <img src={profile} alt="annie" />
                                 </figure>
-                                <span>jason bourne <i>online</i></span>
+                                <span>aipp<i>online</i></span>
                             </div>
                             <ul className="chatting-area">
                                 <li className="you">
                                     <figure>
                                         <img src={profile} alt="annie" />
                                     </figure>
-                                    <p>what's liz short for? :)</p>
+                                    <p>lapar ni ada resep yang enak ga?</p>
                                 </li>
                                 <li className="me">
                                     <figure>
                                         <img src={profile} alt="annie" />
                                     </figure>
-                                    <p>Elizabeth lol</p>
-                                </li>
-                                <li className="me">
-                                    <figure>
-                                        <img src={profile} alt="annie" />
-                                    </figure>
-                                    <p>wanna know whats my second guess was?</p>
+                                    <p>ada dong, liat aja profile saya.</p>
                                 </li>
                                 <li className="you">
                                     <figure>
                                         <img src={profile} alt="annie" />
                                     </figure>
-                                    <p>yes</p>
-                                </li>
-                                <li className="me">
-                                    <figure>
-                                        <img src={profile} alt="annie" />
-                                    </figure>
-                                    <p>Disney's the lizard king</p>
-                                </li>
-                                <li className="me">
-                                    <figure>
-                                        <img src={profile} alt="annie" />
-                                    </figure>
-                                    <p>i know him 5 years ago</p>
+                                    <p>wah bagus tuh</p>
                                 </li>
                                 <li className="you">
                                     <figure>
                                         <img src={profile} alt="annie" />
                                     </figure>
-                                    <p>coooooooooool dude ;)</p>
+                                    <p>aku coba ya</p>
+                                </li>
+                                <li className="me">
+                                    <figure>
+                                        <img src={profile} alt="annie" />
+                                    </figure>
+                                    <p>jangan lupa like yaa !</p>
                                 </li>
                             </ul>
                             <div className="message-text-container">

@@ -1,3 +1,8 @@
+/* todo list
+opacity messages
+followers */
+
+
 /*
 
 [Master Stylesheet]
@@ -55,6 +60,10 @@ Last change:  4/september/18
 /*===============
 ***General Styling 
 ===============*/
+:root{
+    --kunmuda:#FEFDE3;
+    --kuning:#fdbc24;
+}
 html,body{
 	font-family: "Muli", "Segoe Ui";
 }
@@ -203,7 +212,11 @@ section {
 }
 
 .merged.row {
-    margin: 0;
+    margin: 0;    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
 }
 
 .merged.row > div {
@@ -292,9 +305,9 @@ section {
 .gray-bg {
     float: left;
     width: 100%;
-    background: #f4f2f2;
+    background: #fff;
+    /* background: #141432; */
 }
-
 [type="submit"],
 button,
 html [type="button"] {
@@ -495,21 +508,47 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #1fb6ff none repeat scroll 0 0;
+    background: #fdb827 none repeat scroll 0 0;
     color: #fff;
     float: left;
     height: 100vh;
     position: relative;
     text-align: center;
     vertical-align: middle;
+    background-position: top;
     width: 100%;
 }
-
+.land-featurearea .ikon{
+    margin-left: 90%;
+    display:flex;
+    transform:translateY(80%);
+    flex-direction: column;
+}
+.land-featurearea .ikon a{
+    padding:8px;
+    margin:10px 5px;
+    border-radius:80px;
+    background:white;
+    color:black;
+    text-decoration: none;
+}
+.land-featurearea img{
+    width: 1200px;
+    position: absolute;
+    /* margin-top: -250px; */
+    margin-left: -95%;
+    filter: drop-shadow(20px 10px 40px #c08d1e);
+}
 .land-meta {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    /* top: 50%; */
+    transform: translatex(50%);
+    left:10%;
+    z-index: 1;
+    text-shadow: 0px 0px 2px black;
+    justify-content:right;
     width: 100%;
+    color:var(--kuning);    
 }
 
 .land-meta > h1 {
@@ -521,7 +560,7 @@ header.sticky {
     letter-spacing: 0.5px;
 }
 
-.log-reg-area > p {
+.log-reg-area form p {
     color: #878787;
     font-size: 14px;
 }
@@ -556,7 +595,7 @@ header.sticky {
 }
 
 .login-reg-bg {
-    background: #f4f7f6 none repeat scroll 0 0;
+    background: #ffffff none repeat scroll 0 0;
     float: left;
     height: 100vh;
     position: relative;
@@ -564,8 +603,8 @@ header.sticky {
 }
 
 .log-reg-area {
-    background: #fff none repeat scroll 0 0;
-    box-shadow: 0 0 35px #e2e2e2;
+    /* background: #fff none repeat scroll 0 0;
+    box-shadow: 0 0 35px #e2e2e2; */
     display: block;
     float: none;
     left: 50%;
@@ -602,7 +641,7 @@ header.sticky {
 
 .submit-btns {
     display: inline-block;
-    margin-top: 20px;
+    margin-bottom: 20px;
     width: 100%;
 }
 
@@ -639,13 +678,14 @@ header.sticky {
 /*--- topbar ---*/
 
 .topbar {
-    background: #fff;
     display: block;
     height: 60px;
     padding: 0 48px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     z-index: 99;
     position: relative;
+    background:rgb(250, 250, 250);
+    background:var(--kuning);
 }
 
 .logo {
@@ -1150,9 +1190,10 @@ header.sticky {
     position: relative;
     width: 100%;
     margin-bottom: 30px;
-    background: #fdfdfd;
-    border: 1px solid #ede9e9;
+    /* border: 1px solid gray; */
+    box-shadow: 0px 0px 3px var(--kuning);
     border-radius: 3px;
+    /* background:#ffe08338; */
 }
 
 .sidebar .widget:last-child {
@@ -2296,7 +2337,9 @@ footer .logo {
     max-height: 260px;
     position: relative;
 }
-
+.followers li{
+    overflow: hidden;
+}
 .followers > li figure {
     display: inline-block;
     margin-bottom: 0;
@@ -4564,7 +4607,7 @@ canvas {
 }
 
 .mh-head {
-    background: #4bb5ef;
+    background: var(--kuning);
     color: #fff;
     height: auto;
 }
@@ -4780,6 +4823,7 @@ canvas {
 
 .chat-head {
     color: #fff;
+    background:var(--kuning);
     display: inline-block;
     padding: 10px 20px 10px 30px;
     position: relative;
@@ -4905,6 +4949,7 @@ canvas {
 
 .chat-list > ul li.you .chat-message-item {
     background: rgba(202, 239, 142, 0.55) none repeat scroll 0 0;
+    background: var(--kunmuda);
 }
 
 .text-box {
@@ -5314,7 +5359,7 @@ canvas {
 }
 
 .top-search form input {
-    background: #f4f2f2 none repeat scroll 0 0;
+    background: #fefee3 none repeat scroll 0 0;
     border: medium none;
     font-size: 13px;
     padding: 13px 30px;
@@ -10048,3 +10093,45 @@ aside.sidebar.full-style {
 }
 
 
+
+
+
+button{
+    background:#fdb827;
+}
+.widget ul li{
+    padding:0px;
+    padding: 10px;
+}
+.widget ul li:hover{
+    background:var(--kunmuda);
+    color:black;
+    font-weight: 400;
+}
+ul .aktif{
+    background:var(--kunmuda);
+    color:var(--kuning);
+}
+body, a, a:hover{
+    color:black;
+}
+/* colorkoreksi
+.central-meta, .topbar{
+    background:#707092;
+}
+.topbar i, FontAwesomeIcon{
+    font-weight: 700;
+}
+.central-meta,.widget{
+    background: #292952;
+    color:#707092;
+}
+.naves li{
+    padding:0;
+    margin:0;
+}
+.aktif{
+    color: #292952;
+    background:#707092;
+    drop-shadow:10px 10px 10px;
+} */

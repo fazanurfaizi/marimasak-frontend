@@ -13,48 +13,8 @@ const Notifications = () => {
                             <li>
                                 <figure><img src={profile} alt="annie" /></figure>
                                 <div className="notifi-meta">
-                                    <p>bob frank like your post</p>
+                                    <p>aipp like your post</p>
                                     <span>30 mints ago</span>
-                                </div>
-                                <i className="del fa fa-close"></i>
-                            </li>
-                            <li>
-                                <figure><img src={profile} alt="annie" /></figure>
-                                <div className="notifi-meta">
-                                    <p>Sarah Hetfield commented on your photo. </p>
-                                    <span>1 hours ago</span>
-                                </div>
-                                <i className="del fa fa-close"></i>
-                            </li>
-                            <li>
-                                <figure><img src={profile} alt="annie" /></figure>
-                                <div className="notifi-meta">
-                                    <p>Mathilda Brinker commented on your new profile status. </p>
-                                    <span>2 hours ago</span>
-                                </div>
-                                <i className="del fa fa-close"></i>
-                            </li>
-                            <li>
-                                <figure><img src={profile} alt="annie" /></figure>
-                                <div className="notifi-meta">
-                                    <p>Green Goo Rock invited you to attend to his event Goo in Gotham Bar. </p>
-                                    <span>2 hours ago</span>
-                                </div>
-                                <i className="del fa fa-close"></i>
-                            </li>
-                            <li>
-                                <figure><img src={profile} alt="annie" /></figure>
-                                <div className="notifi-meta">
-                                    <p>Chris Greyson liked your profile status. </p>
-                                    <span>1 day ago</span>
-                                </div>
-                                <i className="del fa fa-close"></i>
-                            </li>
-                            <li>
-                                <figure><img src={profile} alt="annie" /></figure>
-                                <div className="notifi-meta">
-                                    <p>You and Nicholas Grissom just became friends. Write on his wall. </p>
-                                    <span>2 days ago</span>
                                 </div>
                                 <i className="del fa fa-close"></i>
                             </li>

@@ -8,7 +8,7 @@ const NotFound = () => {
                     <div className="bg-image" style={{ backgroundImage: `url(${background})` }}></div>
                     <div className="error-meta">
 						<h1>whoops!</h1>
-						<span>we couldn't find that page </span>
+						<span>halaman yang kamu cari tidak ada.</span>
 						<a href="/" title="Go Back" data-ripple="">Go Back</a>
 					</div>
                 </div>

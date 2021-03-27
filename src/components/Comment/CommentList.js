@@ -4,30 +4,24 @@ import annnieProfile from '../../assets/images/Annie.PNG'
 const CommentList = () => {
 
     const data = {
-        name: "Annie Leonhart",
+        name: "Client Marimasak",
         profile: annnieProfile,
         time: '1 day ago',
-        body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+        body: "Mantep rasanya enak"
     }
 
     const list = [
         {
-            name: "Annie Leonhart",
+            name: "Client Marimasak",
             profile: annnieProfile,
             time: '1 day ago',
-            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            body: "Sotonya kerasa banget gurihnya."
         },
         {
             name: "Annie Leonhart",
             profile: annnieProfile,
             time: '1 day ago',
-            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
-        },
-        {
-            name: "Annie Leonhart",
-            profile: annnieProfile,
-            time: '1 day ago',
-            body: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+            body: "Enakk bangettt kaya mau meninggal."
         },
     ]
 
