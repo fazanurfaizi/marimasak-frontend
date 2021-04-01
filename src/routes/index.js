@@ -22,6 +22,7 @@ import PhotosProfile from '../views/Profile/PhotosProfile'
 
 import Checkout from '../views/Checkout/Checkout'
 import Product from '../views/Product/Product'
+import Friends from '../views/Friends/Friends'
 import DetailProduct from '../views/Product/DetailProduct'
 
 // Setting Pages
@@ -50,8 +51,14 @@ export const routes = [
         authentication: false 
     },
     { 
-        path: '/product', 
+        path: '/search/product', 
         component: Product, 
+        layout: AppLayout,
+        authentication: false 
+    },
+    { 
+        path: '/search/friends', 
+        component: Friends, 
         layout: AppLayout,
         authentication: false 
     },

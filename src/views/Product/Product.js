@@ -59,11 +59,11 @@ const Product = () => {
             <div className="col-lg-8">
                 <div className="product-bar">
                     <div className="user-basket">
-                        <a className="aktif">
+                        <a href="search/product" className="aktif">
                             <i className="fa fa-basket"></i>
                             Product
                         </a>
-                        <a>
+                        <a href="search/friends">
                             <i className="fas fa-user"></i>
                             User
                         </a>
@@ -71,17 +71,18 @@ const Product = () => {
                     <div className="filter">
                         <p>Intolerance</p>
                         <select>
-                            <option value="0">Select car:</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
+                            <option value="0">Select:</option>
+                            <option value="1">Haram</option>
+                            <option value="2">Meat</option>
+                            <option value="2">Nut</option>
                         </select>
                     </div>
                     <div className="filter">
-                        <p>Intolerance</p>
+                        <p>Sort By</p>
                         <select>
-                            <option value="0">Select car:</option>
-                            <option value="1">Audi</option>
-                            <option value="2">BMW</option>
+                            <option value="0">Select:</option>
+                            <option value="1">Price</option>
+                            <option value="2">Newest</option>
                         </select>
                     </div>
                 </div>

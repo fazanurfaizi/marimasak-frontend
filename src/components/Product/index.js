@@ -10,6 +10,7 @@ const Post = ({
     publishedAt
 }) => {    
     return (
+        <a href="detail/x">
         <div className="product">
             <div className="product-box">
                 <img src={Pic}/>
@@ -22,8 +23,8 @@ const Post = ({
                     </p>
                 </div>
             </div>
-
         </div>
+        </a>
     )
 }
 

@@ -33,7 +33,7 @@ const DetailProduct = ({ children }) => {
                         </a>
                     </div>
                     <div className="promo-code">
-                        <a>
+                        <a href="checkout">
                             Add To Cart
                         </a>
                     </div>

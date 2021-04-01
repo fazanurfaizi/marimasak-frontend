@@ -96,7 +96,7 @@ const Checkout = () => {
                     <div class="subtitle">
                         <b>Summary</b>
                         <div>Price <b>Rp. 1000</b></div>
-                        <div>Discount <b>Rp. 1000</b></div>
+                        <div>Discount <b>Rp. 0</b></div>
                     </div>
                     <div class="line"></div>
                     <div class="subtitle">
