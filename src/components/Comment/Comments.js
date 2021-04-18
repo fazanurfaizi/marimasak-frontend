@@ -8,7 +8,7 @@ const Comments = () => {
             <ul className="we-comet">
                 <CommentList />                
                 <li>
-                    <a href="#" title="more comments" className="showmore underline">more comments</a>
+                    <a href="#" title="more comments" className="showmore underline">Click for Detail</a>
                 </li>
                 <CommentForm />
             </ul>

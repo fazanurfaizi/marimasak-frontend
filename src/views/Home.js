@@ -2,38 +2,18 @@ import Post from '../components/Post'
 import RightSidebar from '../components/Sidebar/RightSidebar'
 
 import photo from '../assets/images/Annie.PNG'
-import post1 from '../assets/images/435816.jpg'
-import post2 from '../assets/images/573801.jpg'
-import post3 from '../assets/images/pillow-war.jpg'
+import post3 from '../assets/images/soto.jpg'
 
 const Home = () => {
 
     const data = [
         {
-            name: 'Annie Leonhart',
-            profile: photo,
-            thumbnail: post1,
-            likesCount: 32,
-            commentsCount: 50,
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-        {
-            name: 'Annie Leonhart',
-            profile: photo,
-            thumbnail: post2,
-            likesCount: 32,
-            commentsCount: 50,
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-        {
-            name: 'Annie Leonhart',
+            name: 'Client Marimasak',
             profile: photo,
             thumbnail: post3,
             likesCount: 32,
             commentsCount: 50,
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
+            body: "Soto Betawi merupakan salah satu jenis soto khas Nusantara yang paling digemari. Berkuah putih dan cukup kental, soto Betawi ada yang terbuat dari santan kelapa atau susu. Tak ayal, menu ini identik dengan rasa gurih.Berisikan daging sapi dan organ dalam (jeroan), soto Betawi bisa jadi masakan terjamin kenikmatannya. Makanan berkuah ini kaya akan rempah seperti cengkih, pala, kayu manis, dan merica sehingga terasa hangat di badan. Tidak seperti yang dibayangkan, ternyata menu ini bisa kita masak sendiri di rumah. Sama nikmatnya seperti soto Betawi ala restoran, berikut racikan resepnya.",
             publishedAt: 'june, 2 2018 19:PM',
         },
     ]

@@ -10,7 +10,7 @@ const FollowSuggestion = () => {
                         <img src={profile} alt="annie" width="50" />
                     </figure>
                     <div className="friend-meta">
-                        <h4><a href="time-line.html" title="">Kelly Bill</a></h4>
+                        <h4><a href="time-line.html" title="">Client Marimasak</a></h4>
                         <a href="#" title="" className="underline">Add Friend</a>
                     </div>
                 </li>
@@ -19,7 +19,7 @@ const FollowSuggestion = () => {
                         <img src={profile} alt="annie" />
                     </figure>
                     <div className="friend-meta">
-                        <h4><a href="time-line.html" title="">Issabel</a></h4>
+                        <h4><a href="time-line.html" title="">Client Marimasak</a></h4>
                         <a href="#" title="" className="underline">Add Friend</a>
                     </div>
                 </li>
@@ -28,7 +28,7 @@ const FollowSuggestion = () => {
                         <img src={profile} alt="annie" />
                     </figure>
                     <div className="friend-meta">
-                        <h4><a href="time-line.html" title="">Andrew</a></h4>
+                        <h4><a href="time-line.html" title="">Client Marimasak</a></h4>
                         <a href="#" title="" className="underline">Add Friend</a>
                     </div>
                 </li>
@@ -37,7 +37,7 @@ const FollowSuggestion = () => {
                         <img src={profile} alt="annie" />
                     </figure>
                     <div className="friend-meta">
-                        <h4><a href="time-line.html" title="">Sophia</a></h4>
+                        <h4><a href="time-line.html" title="">Client Marimasak</a></h4>
                         <a href="#" title="" className="underline">Add Friend</a>
                     </div>
                 </li>
@@ -46,7 +46,7 @@ const FollowSuggestion = () => {
                         <img src={profile} alt="annie" />
                     </figure>
                     <div className="friend-meta">
-                        <h4><a href="time-line.html" title="">Allen</a></h4>
+                        <h4><a href="time-line.html" title="">Client Marimasak</a></h4>
                         <a href="#" title="" className="underline">Add Friend</a>
                     </div>
                 </li>

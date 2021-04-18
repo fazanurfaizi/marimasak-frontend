@@ -6,7 +6,7 @@ const ChatBox = () => {
         <div className="chat-box show">
             <div className="chat-head">
                 <span className="status f-online"></span>
-                <h6>Bucky Barnes</h6>
+                <h6>Aipp</h6>
                 <div className="more">
                     <span><i className="ti-more-alt"></i></span>
                     <span className="close-mesage"><i className="ti-close"></i></span>
@@ -20,29 +20,7 @@ const ChatBox = () => {
                         </div>
                         <div className="notification-event">
                             <span className="chat-message-item">
-                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
-                            </span>
-                            <span className="notification-date"><time dateTime="2004-07-24T18:18" className="entry-date updated">Yesterday at 8:10pm</time></span>
-                        </div>
-                    </li>
-                    <li className="you">
-                        <div className="chat-thumb">
-                            <img src={profile} alt="annie" />
-                        </div>
-                        <div className="notification-event">
-                            <span className="chat-message-item">
-                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
-                            </span>
-                            <span className="notification-date"><time dateTime="2004-07-24T18:18" className="entry-date updated">Yesterday at 8:10pm</time></span>
-                        </div>
-                    </li>
-                    <li className="me">
-                        <div className="chat-thumb">
-                            <img src={profile} alt="annie" />
-                        </div>
-                        <div className="notification-event">
-                            <span className="chat-message-item">
-                                Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks
+                                Jangan lupa beli makanan ya za! 
                             </span>
                             <span className="notification-date"><time dateTime="2004-07-24T18:18" className="entry-date updated">Yesterday at 8:10pm</time></span>
                         </div>

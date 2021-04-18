@@ -71,7 +71,7 @@ const Login = ({ login }) => {
                     )}                                          
                 </div>             
                 <p>
-                    Don’t use Winku Yet? 
+                    Don’t use Marimasak Yet? 
                     {' '}     
                     <a href="https://www.marimasak.com" title="marimasak.com" target="_blank" rel="noreferrer">
                         Take the tour
