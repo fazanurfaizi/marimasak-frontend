@@ -5,7 +5,7 @@ import photo from '../assets/images/Annie.PNG'
 import post3 from '../assets/images/soto.jpg'
 
 const Home = () => {
-
+    
     const data = [
         {
             name: 'Client Marimasak',

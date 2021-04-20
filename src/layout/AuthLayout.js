@@ -11,20 +11,7 @@ const AuthLayout = ({ children }) => {
                             <img src={bowl}/>
                             <div className="land-meta">
                                 <h1>Marimasak</h1>
-                                <p>
-                                    Marimasak is free to use for as long as you want with two active projects.
-                                </p>
-                                <div className="friend-logo">
-                                    {/* <span><img src={Logo} alt="" /></span> */}
-                                </div>
-                                <a href="#" title="" className="folow-me">Follow Us on</a>
                             </div>	
-                            <div className="ikon">
-                                <a>A</a>
-                                <a>A</a>
-                                <a>A</a>
-                                <a>A</a>
-                            </div>
                         </div>
                     </div>
                     <div className="col-lg-6 col-md-6 col-sm-6 col-xs-12">
