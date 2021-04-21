@@ -20,7 +20,7 @@ class LoginContainer extends Component {
         this.handleEmail = this.handleEmail.bind(this);
         this.handlePassword = this.handlePassword.bind(this);
       }
-      componentWillMount() {
+      UNSAFE_componentWillMount() {
         let state = localStorage["appState"];
         if (state) {
           let AppState = JSON.parse(state);
@@ -54,6 +54,7 @@ class LoginContainer extends Component {
              }
              else {
                 alert(`Login success !`);
+                localStorage.setItem('bearer', json.data.access_token)
                 return this.props.history.push("/home");
              }
         }).catch(error => {if (error.response) {

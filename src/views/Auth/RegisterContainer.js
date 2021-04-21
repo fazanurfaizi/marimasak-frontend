@@ -26,8 +26,7 @@ this.handleEmail = this.handleEmail.bind(this);
 this.handlePassword = this.handlePassword.bind(this);
 this.handlePasswordConfirm = this.handlePasswordConfirm.bind(this);
 }
-// 2.2
-// componentWillMount, componentDidMount etc etc that have //componentStuffStuff are known as React Lifecycles which of course //you already know 
+
 componentWillMount() {
   let state = localStorage["appState"];
   if (state) {
@@ -71,7 +70,8 @@ handleSubmit(e) {
           user: appState.user
         });
       } else {
-          alert(`Registration successful, go to login page`);
+          alert(`Registration successful, redirecting to login page`);
+          return this.props.history.push("/login");
       }
  }).catch(error => {if (error.response) {
      
