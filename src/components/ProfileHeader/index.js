@@ -57,36 +57,9 @@ export default class index extends Component {
                     </div>                    
                 </div>                
             </div>            
-            <div className="container-fluid">
-                <div className="row">                    
-                    <div className="row-lg-12 col-sm-12 " align="center">
-                        <div className="timeline-info">
-                            <ul>
-                                <li>                                
-                                    <Link                        
-                                        title="Posts" 
-                                        to={{pathname: "/u/profile"}}
-                                    >
-                                        Posts
-                                    </Link>
-                                    <Link 
-                                        title="About" 
-                                        to={{pathname: "/u/profile/about"}}
-                                    >
-                                        About
-                                    </Link>
-                                    <Link 
-                                        title="Profile" 
-                                        to={{pathname: "/u/profile/photos"}}
-                                    >
-                                        Photos
-                                    </Link>               
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>            
+                <div className="row d-flex justify-content-center">                    
+                    <Link className="standard-btn" to="/recipes/create">Add Recipe</Link>
+                </div>            
         </section>
         )
     }

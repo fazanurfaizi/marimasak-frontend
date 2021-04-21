@@ -32,8 +32,8 @@ export default class Home extends Component {
                         recipe={item.name}
                         profile={photo}
                         thumbnail={item.thumbnail_url}
-                        likesCount="7"
-                        commentsCount="7"
+                        likesCount="10"
+                        commentsCount="10"
                         body={item.description}
                         publishedAt={item.created_at}
                     />      
@@ -45,7 +45,7 @@ export default class Home extends Component {
         return (
             <>
             <div className="col-lg-6">
-                {this.state.recipes.slice(0).map(this.loopItem)}
+                {this.state.recipes.map(this.loopItem)}
             </div>
             <RightSidebar />
             </>

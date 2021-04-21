@@ -16,6 +16,7 @@
     "classnames": "^2.2.6",
     "react": "^17.0.1",
     "react-bootstrap": "^1.4.3",
+    "react-bootstrap-sweetalert": "^5.2.0",
     "react-detect-click-outside": "^1.0.7",
     "react-dom": "^17.0.1",
     "react-flash-message": "^1.0.5",

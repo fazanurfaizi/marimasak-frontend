@@ -16,9 +16,6 @@ import ForgotPassword from '../views/Auth/ForgotPassword'
 
 // Profile Pages
 import Profile from '../views/Profile'
-import AboutProfile from '../views/Profile/AboutProfile'
-import FriendsProfile from '../views/Profile/FriendsProfile'
-import PhotosProfile from '../views/Profile/PhotosProfile'
 
 import Checkout from '../views/Checkout/Checkout'
 import Product from '../views/Product/Product'
@@ -42,12 +39,34 @@ import TimelineSetting from '../views/Setting/TimelineSetting'
 import NotFound from '../views/Error/NotFound'
 import ErrorLayout from '../layout/ErrorLayout'
 import ProfileLayout from '../layout/ProfileLayout'
+import CreateRecipe from '../views/crud/CreateRecipe'
+import EditRecipe from '../views/crud/EditRecipe'
+import CrudLayout from '../layout/CrudLayout'
+import DetailRecipe from '../views/crud/DetailRecipe'
 
 export const routes = [
     { 
         path: '/', 
         component: Login, 
         layout: AuthLayout,
+        authentication: true 
+    },
+    { 
+        path: '/recipes/create', 
+        component: CreateRecipe, 
+        layout: CrudLayout,
+        authentication: true 
+    },
+    { 
+        path: '/recipes/edit/:id', 
+        component: EditRecipe, 
+        layout: CrudLayout,
+        authentication: true 
+    },
+    { 
+        path: '/recipes:id', 
+        component: DetailRecipe, 
+        layout: CrudLayout,
         authentication: true 
     },
     { 
@@ -124,25 +143,6 @@ export const routes = [
         layout: ProfileLayout,
         authentication: true
     },
-    {
-        path: '/u/:username/about',
-        component: AboutProfile,
-        layout: ProfileLayout,
-        authentication: true
-    },
-    {
-        path: '/u/:username/photos',
-        component: PhotosProfile,
-        layout: ProfileLayout,
-        authentication: true
-    },
-    {
-        path: '/u/:username/friends',
-        component: FriendsProfile,
-        layout: ProfileLayout,
-        authentication: true
-    },
-
     { 
         path: '/settings-basic', 
         component: BasicSetting, 

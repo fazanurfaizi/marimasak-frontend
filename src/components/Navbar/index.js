@@ -231,7 +231,7 @@ const Navbar = () => {
                             <i className="ti-settings"></i>
                             settings
                         </Link>                        
-                        <a href="#" title=""><i className="ti-power-off"></i>log out</a>
+                        <a href="/login" title=""><i className="ti-power-off"></i>log out</a>
                     </div>
                 </div>
             </div>
