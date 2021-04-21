@@ -40,9 +40,15 @@ import ProfileLayout from '../layout/ProfileLayout'
 export const routes = [
     { 
         path: '/', 
+        component: Login, 
+        layout: AppLayout,
+        authentication: true 
+    },
+    { 
+        path: '/home', 
         component: Home, 
         layout: AppLayout,
-        authentication: false 
+        authentication: true 
     },
     {
         path: '/friends', 
