@@ -70,7 +70,8 @@ handleSubmit(e) {
           user: appState.user
         });
       } else {
-          alert(`Registration successful, go to login page`);
+          alert(`Registration successful, redirecting to login page`);
+          return this.props.history.push("/login");
       }
  }).catch(error => {if (error.response) {
      
