@@ -66,6 +66,11 @@ const Navbar = () => {
                             <i className="ti-home"></i>
                         </Link>                            
                     </li>
+                    <li>
+                        <Link to="/checkout">
+                            <i className="ti-bag"></i><span>20</span>
+                        </Link>                            
+                    </li>
                     <li ref={notificationRef}>
                         <a style={{ 'cursor': 'pointer' }} title="Notification" onClick={() => setOpenNotification(!openNotification)}>
                             <i className="ti-bell"></i><span>20</span>
@@ -109,112 +114,7 @@ const Navbar = () => {
                             </ul>
                             <a href="#" title="" className="more-mesg">view more</a>
                         </div>
-                    </li>
-                    <li ref={messageRef}>
-                        <a style={{ 'cursor': 'pointer' }} title="Messages" onClick={() => setOpenMessage(!openMessage)}>
-                            <i className="ti-comment"></i>
-                            <span>12</span>
-                        </a>
-                        <div className={openMessage ? 'dropdowns active' : 'dropdowns'}>
-                            <span>5 New Messages</span>
-                            <ul className="drops-menu">
-                                <li>
-                                    {/* <a  onClick={popupChat}/> */}
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Aipp</h6>
-                                            <span>Cobain resep baru saya nih! Pasti enak.</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag green">New</span>
-                                </li>
-                                <li>
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Taufik</h6>
-                                            <span>Za, ini kok resepmu pahit ya? haha</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag red">Reply</span>
-                                </li>
-                                <li>
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Andrew</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag blue">Unseen</span>
-                                </li>
-                                <li>
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Tom cruse</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                                <li>
-                                    <a  href="/messages" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Amy</h6>
-                                            <span>Hi, how r u dear ...?</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag">New</span>
-                                </li>
-                            </ul>
-                            <a href="#" title="" className="more-mesg">view more</a>
-                        </div>
-                    </li>
-                    <li ref={languageRef}>
-                        <a style={{ cursor: 'pointer' }} title="Languages" onClick={() => setOpenLanguage(!openLanguage)}>
-                            <FontAwesomeIcon icon="globe-asia" />
-                        </a>
-                        <div className={openLanguage ? 'dropdowns languages active' : 'dropdowns languages'}>
-                            <a href="#" title="">
-                                { language === 'english' ? <i className="ti-check"></i> : '' }
-                                English
-                            </a>
-                            <a href="#" title="">
-                                { language === 'indonesia' ? <i className="ti-check"></i> : '' }
-                                Indonesia
-                            </a>
-                        </div>
-                    </li>
+                    </li>                    
                 </ul>
                 <div className="user-img" onClick={() => setOpenProfile(!openProfile)} ref={profileRef}>
                     <img src={annieProfile} alt="" width="40" />
