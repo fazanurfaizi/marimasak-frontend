@@ -41,7 +41,7 @@ export const routes = [
     { 
         path: '/', 
         component: Login, 
-        layout: AppLayout,
+        layout: AuthLayout,
         authentication: true 
     },
     { 

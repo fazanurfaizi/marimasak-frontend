@@ -26,8 +26,7 @@ this.handleEmail = this.handleEmail.bind(this);
 this.handlePassword = this.handlePassword.bind(this);
 this.handlePasswordConfirm = this.handlePasswordConfirm.bind(this);
 }
-// 2.2
-// componentWillMount, componentDidMount etc etc that have //componentStuffStuff are known as React Lifecycles which of course //you already know 
+
 componentWillMount() {
   let state = localStorage["appState"];
   if (state) {
