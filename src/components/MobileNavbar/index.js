@@ -23,8 +23,8 @@ const MobileNavbar = () => {
             </div>
             <div className="mh-head second">
                 <form className="mh-form">
-                    <input type="text" placeholder="Search Friend" />
-                    <a className="fa fa-search"></a>
+                    <input type="text" placeholder="Search" />
+                    <a href="search/product" className="fa fa-search"></a>
                 </form>
             </div>
             <nav id="menu" className="res-menu">

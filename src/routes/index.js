@@ -1,4 +1,5 @@
 import AppLayout from '../layout/AppLayout'
+import NavLayout from '../layout/NavLayout'
 import AuthLayout from '../layout/AuthLayout'
 import SettingLayout from '../layout/SettingLayout'
 
@@ -18,6 +19,11 @@ import Profile from '../views/Profile'
 import AboutProfile from '../views/Profile/AboutProfile'
 import FriendsProfile from '../views/Profile/FriendsProfile'
 import PhotosProfile from '../views/Profile/PhotosProfile'
+
+import Checkout from '../views/Checkout/Checkout'
+import Product from '../views/Product/Product'
+import Friends from '../views/Friends/Friends'
+import DetailProduct from '../views/Product/DetailProduct'
 
 // Setting Pages
 import BasicSetting from '../views/Setting/BasicSetting'
@@ -49,6 +55,30 @@ export const routes = [
         component: Home, 
         layout: AppLayout,
         authentication: true 
+    },
+    { 
+        path: '/search/product', 
+        component: Product, 
+        layout: AppLayout,
+        authentication: false 
+    },
+    { 
+        path: '/search/friends', 
+        component: Friends, 
+        layout: AppLayout,
+        authentication: false 
+    },
+    { 
+        path: '/checkout', 
+        component: Checkout, 
+        layout: NavLayout,
+        authentication: false 
+    },
+    { 
+        path: `/detail/:value`, 
+        component: DetailProduct, 
+        layout: NavLayout,
+        authentication: false 
     },
     {
         path: '/friends', 

@@ -4,8 +4,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDetectClickOutside } from 'react-detect-click-outside';
-
-import logo from '../../assets/images/logo1.png'
+import logo from '../../assets/images/logo.png'
 import annieProfile from '../../assets/images/Annie.PNG'
 
 const Navbar = () => {
@@ -22,8 +21,8 @@ const Navbar = () => {
     const closeNotification = () => {
         setOpenNotification(false)
     }
-    const closeChat = () => {
-        setOpenDetMsg(false)
+    const popupChat = () => {
+        setOpenDetMsg(openDetMsg => !openDetMsg);
     }
     const notificationRef = useDetectClickOutside({ onTriggered: closeNotification })
 
@@ -57,8 +56,8 @@ const Navbar = () => {
             <div className="top-area">
                 <div className="top-search">
                     <form>
-                        <input type="text" placeholder="Search Friend" className="bg-light-gray" />
-                        <button data-ripple><i className="ti-search"></i></button>
+                        <input type="text" placeholder="Search" className="bg-light-gray" />
+                        <button data-ripple><a href="search/product"><i className="ti-search"></i></a></button>
                     </form>
                 </div>                    
                 <ul className="setting-area">                        
@@ -74,7 +73,7 @@ const Navbar = () => {
                         <div className={openNotification ? 'dropdowns active' : 'dropdowns'}>
                             <span>4 New Notifications</span>
                             <ul className="drops-menu">
-                                <li  onClick={() => setOpenDetMsg(!openDetMsg)}>
+                                <li>
                                     <a href="#" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
@@ -120,7 +119,8 @@ const Navbar = () => {
                             <span>5 New Messages</span>
                             <ul className="drops-menu">
                                 <li>
-                                    <a href="#" title="">
+                                    {/* <a  onClick={popupChat}/> */}
+                                    <a  href="/messages" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
                                             <h6>Aipp</h6>
@@ -131,7 +131,7 @@ const Navbar = () => {
                                     <span className="tag green">New</span>
                                 </li>
                                 <li>
-                                    <a href="#" title="">
+                                    <a  href="/messages" title="">
                                         <img src={annieProfile} alt="" />
                                         <div className="mesg-meta">
                                             <h6>Taufik</h6>
@@ -140,6 +140,61 @@ const Navbar = () => {
                                         </div>
                                     </a>
                                     <span className="tag red">Reply</span>
+                                </li>
+                                <li>
+                                    <a  href="/messages" title="">
+                                        <img src={annieProfile} alt="" />
+                                        <div className="mesg-meta">
+                                            <h6>Andrew</h6>
+                                            <span>Hi, how r u dear ...?</span>
+                                            <i>2 min ago</i>
+                                        </div>
+                                    </a>
+                                    <span className="tag blue">Unseen</span>
+                                </li>
+                                <li>
+                                    <a  href="/messages" title="">
+                                        <img src={annieProfile} alt="" />
+                                        <div className="mesg-meta">
+                                            <h6>Tom cruse</h6>
+                                            <span>Hi, how r u dear ...?</span>
+                                            <i>2 min ago</i>
+                                        </div>
+                                    </a>
+                                    <span className="tag">New</span>
+                                </li>
+                                <li>
+                                    <a  href="/messages" title="">
+                                        <img src={annieProfile} alt="" />
+                                        <div className="mesg-meta">
+                                            <h6>Amy</h6>
+                                            <span>Hi, how r u dear ...?</span>
+                                            <i>2 min ago</i>
+                                        </div>
+                                    </a>
+                                    <span className="tag">New</span>
+                                </li>
+                                <li>
+                                    <a  href="/messages" title="">
+                                        <img src={annieProfile} alt="" />
+                                        <div className="mesg-meta">
+                                            <h6>Amy</h6>
+                                            <span>Hi, how r u dear ...?</span>
+                                            <i>2 min ago</i>
+                                        </div>
+                                    </a>
+                                    <span className="tag">New</span>
+                                </li>
+                                <li>
+                                    <a  href="/messages" title="">
+                                        <img src={annieProfile} alt="" />
+                                        <div className="mesg-meta">
+                                            <h6>Amy</h6>
+                                            <span>Hi, how r u dear ...?</span>
+                                            <i>2 min ago</i>
+                                        </div>
+                                    </a>
+                                    <span className="tag">New</span>
                                 </li>
                             </ul>
                             <a href="#" title="" className="more-mesg">view more</a>
@@ -179,8 +234,6 @@ const Navbar = () => {
                         <a href="#" title=""><i className="ti-power-off"></i>log out</a>
                     </div>
                 </div>
-                <span className="ti-menu main-menu" data-ripple="">                        
-                </span>
             </div>
         </div>
     )

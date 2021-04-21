@@ -225,7 +225,8 @@
         left: 218px !important;
     }
     .user-avatar {
-        width: 100%;
+        max-width: 10px;
+        max-height: 10px;
     }
     .inbox-panel-head > img {
         margin-right: 10px;
