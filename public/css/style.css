@@ -61,11 +61,18 @@ Last change:  4/september/18
 ***General Styling 
 ===============*/
 :root{
+    /* --kunmuda:#d6d6d6;
+    --kuning:gray; */
+    
     --kunmuda:#FEFDE3;
-    --kuning:#fdbc24;
+    --kuning:#fdb827;
+    /* buat wireframe */
 }
 html,body{
 	font-family: "Muli", "Segoe Ui";
+}
+a{
+    cursor: pointer;
 }
 body {
     float: left;
@@ -258,7 +265,7 @@ section {
 }
 
 .pattern:before {
-    background: #088dcd url("../images/dot-pattern.png") repeat scroll 0 0;
+    background: #364AFF url("../images/dot-pattern.png") repeat scroll 0 0;
     opacity: 0.45;
 }
 
@@ -267,7 +274,7 @@ section {
 }
 
 .bluesh:before {
-    background: #088dcd;
+    background: #364AFF;
 }
 
 .exthigh-opacity:before {
@@ -508,7 +515,9 @@ header.sticky {
 }
 
 .land-featurearea {
-    background: #fdb827 none repeat scroll 0 0;
+    background: #fdb827 none repeat scroll 0 0; 
+    
+	/* background: #a8a8a8 none repeat scroll 0 0; wireframe*/
     color: #fff;
     float: left;
     height: 100vh;
@@ -749,15 +758,6 @@ header.sticky {
     right: 5px;
 }
 
-.top-area > span.main-menu {
-    cursor: pointer;
-    display: inline-block;
-    font-size: 20px;
-    margin-left: 20px;
-    margin-right: -10px;
-    vertical-align: inherit;
-}
-
 .top-area .user-img > img {
     border-radius: 50%;
     display: inline-block;
@@ -892,7 +892,7 @@ header.sticky {
 }
 
 .timeline-info .admin-name > h5 {
-    color: #088dcd;
+    color: #364AFF;
     display: inline-block;
     font-size: 24px;
     font-weight: 500;
@@ -2937,7 +2937,7 @@ li.google {
 }
 
 .g-map::before {
-    background: #088dcd none repeat scroll 0 0;
+    background: #364AFF none repeat scroll 0 0;
     content: "";
     height: 100%;
     left: 0;
@@ -2955,7 +2955,7 @@ li.google {
 }
 
 .map-meta {
-    background: #088dcd none repeat scroll 0 0;
+    background: #364AFF none repeat scroll 0 0;
     color: #fff;
     left: 10%;
     padding: 20px;
@@ -5365,7 +5365,8 @@ canvas {
 }
 
 .top-search form input {
-    background: #fefee3 none repeat scroll 0 0;
+    background: #fefee3 none repeat scroll 0 0; 
+    /* background: #b9b9b9 none repeat scroll 0 0; wireframe */
     border: medium none;
     font-size: 13px;
     padding: 13px 30px;
@@ -6756,7 +6757,7 @@ a.reply {
 }
 
 .menu-container {
-    background-color: #088dcd;
+    background-color: #364AFF;
     -webkit-border-radius: 100%;
     -moz-border-radius: 100%;
     -ms-border-radius: 100%;
@@ -10163,8 +10164,8 @@ select{
     background:var(--kuning);
 }
 .product-container{
-    display:flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto auto;
     margin-top: 20px;
     border-radius: 5px;
     justify-content: space-between;
@@ -10194,7 +10195,8 @@ select{
 }
 
 .product-box i:first-child{
-    color:#FDBC24;
+    color:#fdb827;
+    /* buat wireframe */
 }
 /* DetailProduct */
 input[type="checkbox"]{
@@ -10232,6 +10234,7 @@ input[type="checkbox"]{
     flex-basis: 1;
 }
 .detail-product{
+    width:80%;
     border: 1px solid var(--kuning);
     border-radius: 10px;
     margin-top: 20px;
@@ -10239,8 +10242,8 @@ input[type="checkbox"]{
 }
 .box-checkout{
     margin:40px 10px;
-    width: 327px;
-    height: 320px;
+    width:20%;
+    height: fit-content;
     left: 1097px;
     top: 190px;
     padding: 15px;
@@ -10311,6 +10314,34 @@ input[type="checkbox"]{
 .cart-list{
     width:100%;
     margin:20px;
+}
+
+@media screen and (max-width: 785px) {
+    .user-basket .aktif::before{
+        margin-top: 33px;
+    }
+    .product-bar{
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 785px) {
+    .detail-product{
+        width:unset;
+    }
+    .box-checkout{
+        width:fill;
+    }
+    .flex{
+        flex-direction: column;
+    }
+}
+@media screen and (max-width: 247) {
+    .user-basket .aktif::before{
+        /* margin-top: 43px; */
+    }
+    .user-basket{
+        margin-top: -20px;
+    }
 }
 /* colorkoreksi
 .central-meta, .topbar{

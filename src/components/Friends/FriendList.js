@@ -1,5 +1,4 @@
-import ChatBox from '../Chat/ChatBox'
-import profile from '../../assets/images/Annie.PNG'
+import profile from '../../assets/images/Annie.png'
 
 const FriendList = () => {
     return (
@@ -103,8 +102,6 @@ const FriendList = () => {
                     </div>
                 </li>
             </ul>
-
-            <ChatBox />
         </div>
     )
 }

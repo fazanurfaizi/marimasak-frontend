@@ -1,4 +1,4 @@
-import profile from '../../assets/images/Annie.PNG'
+import profile from '../../assets/images/Annie.png'
 
 const FollowSuggestion = () => {
     return (

@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //ngeloop gr2 ini
 import RightSidebar from '../../components/Sidebar/RightSidebar'
-import profile from '../../assets/images/Annie.PNG'
+import profile from '../../assets/images/Annie.png'
 
 const Friends = () => {
     let i=0;
@@ -85,7 +85,7 @@ const Friends = () => {
                         </select>
                     </div> */}
                 </div>
-                <div className="loadMore  product-container">
+                <div className=" product-container">
                 <div className="tab-content">
                         <div className="tab-pane active fade show " id="frends" >
                         <ul className="nearby-contct">

@@ -69,7 +69,7 @@ export const routes = [
         authentication: false 
     },
     { 
-        path: '/detail/x', 
+        path: `/detail/:value`, 
         component: DetailProduct, 
         layout: NavLayout,
         authentication: false 

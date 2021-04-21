@@ -84,7 +84,7 @@ blockquote,
 .job-detail > ul li i,
 .company-intro > a
 {
-	color: #088dcd;	
+	color: #364AFF;	
 }
 svg{
 stroke: #fff;
@@ -147,10 +147,12 @@ button.submit-checkout,
 a.addnewforum,
 .apply-bttons > a
 {
-	background: #fdb827;
+	background: #fdb827; 
+	
+	/* background: #a8a8a8;wireframe */
 }
 
-
+/* 088dcd konver ke 364aff */
 
 
 /*=========================
@@ -167,16 +169,16 @@ a.addnewforum,
 a.btn2:hover,
 .single-btn > li > a.active
 {
-	border-color: #088dcd;	
+	border-color: #364AFF;	
 }
 
 #nprogress .spinner-icon{
-	border-left-color: #088dcd;
+	border-left-color: #364AFF;
 }
 #nprogress .spinner-icon
 {
-	border-top-color: #088dcd;		
+	border-top-color: #364AFF;		
 }
 .timeline-info > ul li a:after{
-	border-bottom-color: #088dcd;
+	border-bottom-color: #364AFF;
 }

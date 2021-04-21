@@ -1,8 +1,8 @@
 import Post from '../components/Post'
 import RightSidebar from '../components/Sidebar/RightSidebar'
 
-import photo from '../assets/images/Annie.PNG'
-import post1 from '../assets/images/435816.jpg'
+import photo from '../assets/images/Annie.png'
+import post1 from '../assets/images/food.png'
 import post2 from '../assets/images/573801.jpg'
 import post3 from '../assets/images/pillow-war.jpg'
 
@@ -41,7 +41,7 @@ const Home = () => {
     return (
         <>
             <div className="col-lg-6">
-                <div className="loadMore">
+                <div>
                     {data.map((item, index) => (
                         <Post 
                             key={index}

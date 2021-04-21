@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useParams, useLocation } from 'react-router-dom'
 import backgroundImage from '../../assets/images/timeline-1.jpg'
-import annieProfile from '../../assets/images/Annie.PNG'
+import annieProfile from '../../assets/images/Annie.png'
 
 const ProfileHeader = () => {    
         
