@@ -6,7 +6,8 @@ class DetailProduct extends Component {
     constructor() {
         super();
         this.state = {
-          show: false
+          show: false,
+          dataSource:[]
         };
         this.showModal = this.showModal.bind(this);
         this.hideModal = this.hideModal.bind(this);

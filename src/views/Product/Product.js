@@ -1,8 +1,5 @@
 import Post from '../../components/Product'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-//ngeloop gr2 ini
-import RightSidebar from '../../components/Sidebar/RightSidebar'
-
 
 const Product = () => {
     let i=0;
@@ -80,11 +77,10 @@ const Product = () => {
                         </a>
                     </div>
                     <div className="filter">
-                        <p>Intolerance</p>
+                        <p>Category</p>
                         <select>
-                            <option value="1">Haram</option>
+                            <option value="1">Dessert</option>
                             <option value="2">Meat</option>
-                            <option value="2">Nut</option>
                         </select>
                     </div>
                     <div className="filter">
@@ -102,23 +98,12 @@ const Product = () => {
                         <Post 
                             key={index}
                             item={item}
-                            id={item.id}
-                            name={item.name}
-                            harga={item.harga}
-                            profile={item.profile}
-                            thumbnail={item.thumbnail}
-                            lokasi={item.lokasi}
-                            rate={item.rate}
-                            body={item.body}
-                            publishedAt={item.publishedAt}
                         />
                         
-                        {/* if(i%6==0){</div>} */}
                         </div>
                     ))}        
                 </div>
             </div>
-            {/* <RightSidebar /> */}
         </>
     )
 }
