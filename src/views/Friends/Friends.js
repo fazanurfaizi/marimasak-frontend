@@ -2,7 +2,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 //ngeloop gr2 ini
 import RightSidebar from '../../components/Sidebar/RightSidebar'
-import profile from '../../assets/images/Annie.png'
+import profile from '../../assets/images/Annie.PNG'
 
 const Friends = () => {
     let i=0;

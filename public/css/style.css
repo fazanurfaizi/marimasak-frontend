@@ -10320,16 +10320,19 @@ input[type="checkbox"]{
     .user-basket .aktif::before{
         margin-top: 33px;
     }
+    .detail-product img{
+        width: 85%;
+    }
     .product-bar{
         flex-direction: column;
     }
 }
-@media screen and (min-width: 785px) {
+@media screen and (max-width: 985px) {
     .detail-product{
         width:unset;
     }
     .box-checkout{
-        width:fill;
+        width:auto;
     }
     .flex{
         flex-direction: column;

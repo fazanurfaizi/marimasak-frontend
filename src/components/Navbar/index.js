@@ -5,7 +5,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import logo from '../../assets/images/logo.png'
-import annieProfile from '../../assets/images/Annie.png'
+import annieProfile from '../../assets/images/Annie.PNG'
 
 const Navbar = () => {
 

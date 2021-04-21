@@ -1,5 +1,5 @@
 import Comment from './Comment'
-import annnieProfile from '../../assets/images/Annie.png'
+import annnieProfile from '../../assets/images/Annie.PNG'
 
 const CommentList = () => {
 

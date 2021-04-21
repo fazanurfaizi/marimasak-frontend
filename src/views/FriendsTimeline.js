@@ -1,4 +1,4 @@
-import profile from '../assets/images/Annie.png'
+import profile from '../assets/images/Annie.PNG'
 
 const FriendsTimeline = () => {
     return (
