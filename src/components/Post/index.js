@@ -4,6 +4,7 @@ import Comments from '../Comment/Comments'
 
 const Post = ({
     name,
+    recipe,
     profile,
     thumbnail,
     likesCount,
@@ -19,7 +20,7 @@ const Post = ({
                         <img src={profile} alt="annie" />
                     </figure>
                     <div className="friend-name">
-                        <ins><a href="time-line.html" title="">{name}</a></ins>
+                        <ins><a href="/u/profile" title="">{name}</a></ins>
                         <span>published: {publishedAt}</span>
                     </div>
                     <div className="post-meta">
@@ -36,6 +37,7 @@ const Post = ({
                                 <SocialShare />
                             </ul>
                         </div>
+                        <h5>{recipe}</h5>
                         <div className="description">                                
                             <p>
                                 {body}                                

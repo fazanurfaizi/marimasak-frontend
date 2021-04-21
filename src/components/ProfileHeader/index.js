@@ -1,22 +1,30 @@
-import React, { useState, useEffect } from 'react'
+import React, { Component } from 'react'
 import { Link, useParams, useLocation } from 'react-router-dom'
 import backgroundImage from '../../assets/images/timeline-1.jpg'
 import annieProfile from '../../assets/images/Annie.PNG'
+import axios from 'axios'
 
-const ProfileHeader = () => {    
-        
-    let params = useParams();    
-    let location = useLocation();    
+export default class index extends Component {
+    state = {
+        profile: []
+    }
 
-    const [username, setUsername] = useState(params.username);
-    const [currentLocation, setCurrenctLocation] = useState(location.pathname.substring(location.pathname.lastIndexOf('/') + 1));
+    componentDidMount(){
+        const token = localStorage.getItem("bearer")
+        axios.get('http://localhost:8000/api/auth/me', {
+        headers: {
+        Authorization: 'Bearer ' + token
+        }
+        })
+        .then(res => {
+            const profile = res.data;
+            this.setState({ profile });
+            console.log(profile);
+        })
+    }
 
-    useEffect(() => {
-        setCurrenctLocation(location.pathname.substring(location.pathname.lastIndexOf('/') + 1))
-        setUsername(params.username)                
-    }, [currentLocation, location.pathname, params.username, username]);      
-
-    return (        
+    render() {
+        return (
         <section>            
             <div className="feature-photo">
                 <figure>
@@ -45,48 +53,34 @@ const ProfileHeader = () => {
                         </div>                       
                     </div>
                     <div className="d-flex justify-content-center">                    
-                        <h5 className="mx-auto d-block">{username}</h5>
+                        <h5 className="mx-auto d-block profile-name">{this.state.profile.name}</h5>
                     </div>                    
                 </div>                
             </div>            
             <div className="container-fluid">
                 <div className="row">                    
-                    <div className="row-lg-12 col-sm-12" align="center">
+                    <div className="row-lg-12 col-sm-12 " align="center">
                         <div className="timeline-info">
                             <ul>
                                 <li>                                
-                                    <Link
-                                        aria-current={currentLocation === `${username}` ? 'page' : '' }         
-                                        className={currentLocation === `${username}` ? 'active ' : '' }                            
+                                    <Link                        
                                         title="Posts" 
-                                        to={{pathname: `/u/${username}`, query: {username}}}
+                                        to={{pathname: "/u/profile"}}
                                     >
                                         Posts
                                     </Link>
-                                    <Link
-                                        aria-current={currentLocation === `about` ? 'page' : '' }         
-                                        className={currentLocation === `about` ? 'active ' : '' }   
+                                    <Link 
                                         title="About" 
-                                        to={{pathname: `/u/${username}/about`, query: {username}}}
+                                        to={{pathname: "/u/profile/about"}}
                                     >
                                         About
                                     </Link>
-                                    <Link
-                                        aria-current={currentLocation === `friends` ? 'page' : '' }         
-                                        className={currentLocation === `friends` ? 'active ' : '' }   
-                                        title="Friends" 
-                                        to={{pathname: `/u/${username}/friends`, query: {username}}}
-                                    >
-                                        Friends
-                                    </Link>
-                                    <Link
-                                        aria-current={currentLocation === `photos` ? 'page' : '' }         
-                                        className={currentLocation === 'photos' ? 'active ' : '' }   
-                                        title="Photos" 
-                                        to={{pathname: `/u/${username}/photos`, query: {username}}}
+                                    <Link 
+                                        title="Profile" 
+                                        to={{pathname: "/u/profile/photos"}}
                                     >
                                         Photos
-                                    </Link>                                                                                       
+                                    </Link>               
                                 </li>
                             </ul>
                         </div>
@@ -94,7 +88,6 @@ const ProfileHeader = () => {
                 </div>
             </div>            
         </section>
-    )
+        )
+    }
 }
-
-export default ProfileHeader

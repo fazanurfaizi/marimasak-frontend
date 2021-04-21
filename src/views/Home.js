@@ -20,7 +20,6 @@ export default class Home extends Component {
         .then(res => {
             const recipes = res.data.data;
             this.setState({ recipes });
-            console.log(recipes);
         })
     }
 
@@ -29,13 +28,14 @@ export default class Home extends Component {
             <div className="loadMore">
                     <Post 
                         key={item.id}
-                        name={item.name}
+                        name={item.user.name}
+                        recipe={item.name}
                         profile={photo}
                         thumbnail={item.thumbnail_url}
                         likesCount="7"
                         commentsCount="7"
                         body={item.description}
-                        publishedAt="pagi pagi"
+                        publishedAt={item.created_at}
                     />      
             </div>
         )
