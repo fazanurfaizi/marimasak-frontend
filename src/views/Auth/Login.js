@@ -29,18 +29,22 @@ const Login = ({ login }) => {
                         id="input" 
                         required="required"
                         value={email}
-                        onChange={(e) => setEmail(e.target.value)} required
+                        onChange={(e) => setEmail(e.target.value)} 
+                        required
                     />
-                    <label className="control-label" htmlFor="input">Username</label><i className="mtrl-select"></i>
+                    <label className="control-label" htmlFor="input">Username</label>
+                    <i className="mtrl-select"></i>
                 </div>
                 <div className="form-group">	
                     <input 
                         type="password" 
                         required="required"
                         value={password}
-                        onChange={(e) => setPassword(e.target.value)} required
+                        onChange={(e) => setPassword(e.target.value)} 
+                        required
                     />
-                    <label className="control-label" htmlFor="input">Password</label><i className="mtrl-select"></i>
+                    <label className="control-label" htmlFor="input">Password</label>
+                    <i className="mtrl-select"></i>
                 </div>
                 <Link to="/forgot-password" className="forgot-pwd" title="Forgot Password">
                     Forgot Password?
