@@ -71,16 +71,16 @@ const Product = () => {
                         <Link to="products" className="aktif">
                             Products
                         </Link>                                        
-                    </div>
-                    <div className="filter">
-                        <p>Category</p>
+                    </div>                    
+                    <div className="filter">                       
+                        <p>Category &nbsp;</p>
                         <select>
                             <option value="1">Dessert</option>
                             <option value="2">Meat</option>
                         </select>
                     </div>
                     <div className="filter">
-                        <p>Sort By</p>
+                        <p>Sort By &nbsp;</p>
                         <select>
                             <option value="1">Price</option>
                             <option value="2">Newest</option>

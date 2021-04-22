@@ -39,14 +39,14 @@ export default class LeftSidebar extends Component {
                             <i className="ti-receipt"></i>
                             <NavLink to="/products" title="products">products</NavLink>                            
                         </li>                        
-                        <li>
+                        {/* <li>
                             <i className="ti-comments-smiley"></i>
                             <NavLink to="/messages" title="messages">messages</NavLink>   
                         </li>
                         <li>
                             <i className="ti-bell"></i>
                             <NavLink to="/notifications" title="Notifications">Notifications</NavLink>                            
-                        </li>                                                
+                        </li>                                                 */}
                     </ul>
                 </div>
             </aside>

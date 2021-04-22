@@ -6,8 +6,8 @@ const FriendsTimeline = () => {
             <div className="central-meta">
                 <div className="frnds">
                     <ul className="nav nav-tabs">
-                        <li className="nav-item"><a className="active" href="#frends" data-toggle="tab">My Friends</a> <span>55</span></li>
-                        <li className="nav-item"><a className="" href="#frends-req" data-toggle="tab">Friend Requests</a><span>60</span></li>
+                        <li className="nav-item"><a className="active" href="#frends" data-toggle="tab">My Friends</a><span>6</span></li>
+                        <li className="nav-item"><a className="" href="#frends-req" data-toggle="tab">Friend Requests</a><span>6</span></li>
                     </ul>
 
                     <div className="tab-content">
