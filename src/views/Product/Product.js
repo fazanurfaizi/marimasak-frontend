@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Post from '../../components/Product'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -67,14 +68,9 @@ const Product = () => {
             <div className="col-lg-8">
                 <div className="product-bar">
                     <div className="user-basket">
-                        <a href="search/product" className="aktif">
-                            <i className="fa fa-basket"></i>
-                            Product
-                        </a>
-                        <a href="search/friends">
-                            <i className="fas fa-user"></i>
-                            User
-                        </a>
+                        <Link to="products" className="aktif">
+                            Products
+                        </Link>                                        
                     </div>
                     <div className="filter">
                         <p>Category</p>

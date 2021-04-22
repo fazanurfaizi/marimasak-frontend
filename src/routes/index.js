@@ -76,7 +76,7 @@ export const routes = [
         authentication: true 
     },
     { 
-        path: '/search/product', 
+        path: '/products', 
         component: Product, 
         layout: AppLayout,
         authentication: false 

@@ -10,14 +10,13 @@ export default class LeftSidebar extends Component {
     componentDidMount(){
         const token = localStorage.getItem("bearer")
         axios.get('http://localhost:8000/api/auth/me', {
-        headers: {
-        Authorization: 'Bearer ' + token
-        }
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
         })
         .then(res => {
             const profile = res.data;
-            this.setState({ profile });
-            console.log(profile);
+            this.setState({ profile });            
         })
     }
 
@@ -26,15 +25,19 @@ export default class LeftSidebar extends Component {
             <div className="col-lg-3">
             <aside className="sidebar static left d-none d-sm-none d-lg-block">
                 <div className="widget">
-                    <NavLink to="/friends" className="widget-title" title="profile">{this.state.profile.name}</NavLink>                              
+                    <NavLink to={`/u/${this.state.profile.name}`} className="widget-title" title="profile">{this.state.profile.name}</NavLink>                              
                     <ul className="naves">                        
                         <li className="aktif">
                             <i className="ti-home"></i>
-                            <NavLink to="/" title="home">home</NavLink>                            
+                            <NavLink to="/home" title="home">home</NavLink>                            
                         </li>                        
                         <li>
                             <i className="ti-user"></i>
                             <NavLink to="/friends" title="friends">friends</NavLink>                            
+                        </li>                        
+                        <li>
+                            <i className="ti-receipt"></i>
+                            <NavLink to="/products" title="products">products</NavLink>                            
                         </li>                        
                         <li>
                             <i className="ti-comments-smiley"></i>
