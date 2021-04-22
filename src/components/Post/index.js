@@ -12,6 +12,12 @@ const Post = ({
     body,
     publishedAt
 }) => {    
+
+    const dateFormat = value => {
+        let date = new Date(value);        
+        return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    }
+
     return (
         <div className="central-meta item">
             <div className="user-post">
@@ -21,11 +27,11 @@ const Post = ({
                     </figure>
                     <div className="friend-name">
                         <ins><a href="/u/profile" title="">{name}</a></ins>
-                        <span>published: {publishedAt}</span>
+                        <span>published: {dateFormat(publishedAt)}</span>
                     </div>
                     <div className="post-meta">
                         <img src={thumbnail} alt="" />
-                        <div className="we-video-info">
+                        {/* <div className="we-video-info">
                             <ul>     
                                 <PostLike totalLikes={likesCount} />                              
                                 <li>
@@ -36,7 +42,7 @@ const Post = ({
                                 </li>                                               
                                 <SocialShare />
                             </ul>
-                        </div>
+                        </div> */}
                         <h5>{recipe}</h5>
                         <div className="description">                                
                             <p>
@@ -45,7 +51,7 @@ const Post = ({
                         </div>
                     </div>
                 </div>
-                <Comments />
+                {/* <Comments /> */}
             </div>
         </div>
     )

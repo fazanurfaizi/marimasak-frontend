@@ -1,11 +1,5 @@
-/* todo list
-opacity messages
-followers */
-
 
 /*
-
-
 ====INDEX=====
 
 01- general styling
@@ -10352,9 +10346,63 @@ input[type="checkbox"]{
     animation: animasiBulat 2s linear infinite;
 }
 .profile-name{
-    margin-top: 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
     font-size: 25px !important;
 }
+
+.post-pict{
+    width: 700px;
+    height: 200px;
+}
+
+.text-block {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    display: none !important;
+    transition: 1s !important;
+  }
+
+.text-block a {
+    color: white;
+    margin-left: 10px;
+}
+
+.own-recipe{
+    transition: 1s !important;
+    opacity: 1;
+    margin-bottom: 30px;
+}
+
+.text-block button{
+    background-color: black;
+}
+
+.own-recipe img:hover + .text-block, .text-block:hover{
+    display: inline-block !important;
+    opacity: 0.8 !important;
+}
+.standard-btn {
+    text-decoration:none;
+    border: 2px solid var(--kuning);
+    padding:10px 20px 10px 20px;
+    border-radius:2px;
+    color:var(--kuning);
+    margin:5px;
+  }
+  
+  .standard-btn:hover {
+    color:white;
+    background-color:var(--kuning);
+  }
+
+  .fake{
+      display: none !important;
+  }
 @keyframes animasiBulat{
     0%{
         transform: rotate(0deg);
