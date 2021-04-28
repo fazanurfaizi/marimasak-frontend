@@ -3,6 +3,7 @@ import {Link, withRouter} from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import FlashMessage from 'react-flash-message';
 import axios from 'axios';
+import SweetAlert from 'react-bootstrap-sweetalert';
 class RegisterContainer extends Component {
   // 2.1
   constructor(props) {
@@ -70,8 +71,15 @@ handleSubmit(e) {
           user: appState.user
         });
       } else {
-          alert(`Registration successful, redirecting to login page`);
-          return this.props.history.push("/login");
+        <SweetAlert
+          success
+          title="Success!"          
+          timeout={2000}
+          confirmBtnText="Oke"
+          >
+            Register berhasil
+        </SweetAlert>
+        return this.props.history.push("/login");
       }
  }).catch(error => {if (error.response) {
      

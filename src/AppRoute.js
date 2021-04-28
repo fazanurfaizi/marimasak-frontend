@@ -12,7 +12,7 @@ const AppRoute = ({
     ...rest
 }) => {
     return (
-        <Route
+        <Route        
             {...rest}
             render={props => (
                 authentication ? (fakeAuth.isAuthenticated ? (

@@ -31,7 +31,7 @@ const Post = ({
                     </div>
                     <div className="post-meta">
                         <img src={thumbnail} alt="" />
-                        {/* <div className="we-video-info">
+                        <div className="we-video-info">
                             <ul>     
                                 <PostLike totalLikes={likesCount} />                              
                                 <li>
@@ -42,7 +42,7 @@ const Post = ({
                                 </li>                                               
                                 <SocialShare />
                             </ul>
-                        </div> */}
+                        </div>
                         <h5>{recipe}</h5>
                         <div className="description">                                
                             <p>
