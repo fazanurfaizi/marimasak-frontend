@@ -48,7 +48,7 @@ const Navbar = () => {
     return (
         <div className="topbar stick">
             <div className="logo">
-                <Link to="/home" title="Marimasak">
+                <Link to="/" title="Marimasak">
                     <img src={logo} alt="Marimasak" />
                 </Link>
             </div>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 </div>                    
                 <ul className="setting-area">                        
                     <li>
-                        <Link to="/home">
+                        <Link to="/">
                             <i className="ti-home"></i>
                         </Link>                            
                     </li>

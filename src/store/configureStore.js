@@ -11,11 +11,13 @@ import {
 
 import alert from '../reducers/alert'
 import auth from '../reducers/auth'
+import recipe from '../reducers/recipe'
 
 const logger = createLogger();
 const rootReducer = combineReducers({
     auth,
-    alert
+    alert,
+    recipe
 })
 const initialState = {};
 
@@ -23,11 +25,11 @@ export default function() {
     let store = createStore(
         rootReducer,
         initialState,
-        applyMiddleware(
-            thunkMiddleware,
-            logger
+        compose(
+            applyMiddleware(thunkMiddleware, logger),
+            window.devToolsExtension ? window.devToolsExtension() : f => f
         )
-    );
+    )
 
     // if(module.hot) {
     //     store = createStore(

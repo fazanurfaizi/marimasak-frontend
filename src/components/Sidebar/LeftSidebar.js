@@ -1,31 +1,26 @@
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import React, { Component } from 'react'
-import axios from 'axios'
+import { useSelector } from 'react-redux'
 
-export default class LeftSidebar extends Component {
-    state = {
-        profile: []
-    }
+const LeftSidebar = () => {
 
-    componentDidMount(){
-        const token = localStorage.getItem("bearer")
-        axios.get('http://localhost:8000/api/auth/me', {
-            headers: {
-                Authorization: 'Bearer ' + token
-            }
-        })
-        .then(res => {
-            const profile = res.data;
-            this.setState({ profile });            
-        })
-    }
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    const user = useSelector(state => {
+        if(isAuthenticated) {
+            return state.auth.user
+        }
+        return null;
+     })    
 
-    render() {
-        return (
-            <div className="col-lg-3">
+    return (
+        <div className="col-lg-3">
             <aside className="sidebar static left d-none d-sm-none d-lg-block">
                 <div className="widget">
-                    <NavLink to={`/u/${this.state.profile.name}`} className="widget-title" title="profile">{this.state.profile.name}</NavLink>                              
+                    {isAuthenticated &&                         
+                        <NavLink to={`/u/${user?.name}`} className="widget-title" title={`${user?.name}`}>
+                            {user?.name}
+                        </NavLink>  
+                    }                            
                     <ul className="naves">                        
                         <li className="aktif">
                             <i className="ti-home"></i>
@@ -51,6 +46,7 @@ export default class LeftSidebar extends Component {
                 </div>
             </aside>
         </div>
-        )
-    }
+    )
 }
+
+export default LeftSidebar

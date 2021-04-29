@@ -1,6 +1,6 @@
 import axios from './axios'
 
-const login = (email, password, from) => {
+const login = (email, password) => {
     return new Promise((resolve, reject) => {
         axios.post('/auth/login', { email, password })
             .then(response => {

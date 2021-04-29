@@ -33,7 +33,7 @@ export function loginFailure(error) {
         type: LOGIN_FAILURE,
         payload: {
             status: 403,
-            statusText: error.response.data.message
+            statusText: error.data.message
         }
     }
 }
@@ -47,7 +47,7 @@ export function login(email, password) {
                 dispatch(getAuthUser()) 
                 history.push('/')                        
             })
-            .catch(error => {                        
+            .catch(error => {                             
                 dispatch(loginFailure(error))
             })
     }
