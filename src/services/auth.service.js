@@ -1,10 +1,10 @@
 import axios from './axios'
 
-const login = (email, password) => {
+const login = (email, password, from) => {
     return new Promise((resolve, reject) => {
         axios.post('/auth/login', { email, password })
             .then(response => {
-                resolve(response)                
+                resolve(response)                                                           
             })
             .catch((err) => reject(err))
     })    
@@ -20,8 +20,7 @@ const register = (body) => {
     })
 }
 
-const getAuthUser = () => {
-    const token = localStorage.getItem("access-token")
+const getAuthUser = () => {    
     return new Promise((resolve, reject) => {
         axios.get('/auth/me')
             .then(response => {                
@@ -31,8 +30,21 @@ const getAuthUser = () => {
     })
 }
 
+const logout = () => {
+    return new Promise((resolve, reject) => {
+        axios.get('/auth/logout')
+            .then(response => {
+                resolve(response)
+            })
+            .catch(error => {
+                resolve(error)
+            })
+    })
+}
+
 export const authService = {
     login,
     register,
-    getAuthUser
+    getAuthUser,
+    logout
 }

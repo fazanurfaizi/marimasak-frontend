@@ -20,24 +20,31 @@ const rootReducer = combineReducers({
 const initialState = {};
 
 export default function() {
-    let store;
+    let store = createStore(
+        rootReducer,
+        initialState,
+        applyMiddleware(
+            thunkMiddleware,
+            logger
+        )
+    );
 
-    if(module.hot) {
-        store = createStore(
-            rootReducer,
-            initialState,
-            compose(
-                applyMiddleware(thunkMiddleware, logger),
-                window.devToolsExtension ? window.devToolsExtension() : f => f
-            )
-        )
-    } else {
-        store = createStore(
-            rootReducer,
-            initialState,
-            compose(applyMiddleware(thunkMiddleware), f => f)
-        )
-    }    
+    // if(module.hot) {
+    //     store = createStore(
+    //         rootReducer,
+    //         initialState,
+    //         compose(
+    //             applyMiddleware(thunkMiddleware, logger),
+    //             window.devToolsExtension ? window.devToolsExtension() : f => f
+    //         )
+    //     )
+    // } else {
+    //     store = createStore(
+    //         rootReducer,
+    //         initialState,
+    //         compose(applyMiddleware(thunkMiddleware), f => f)
+    //     )
+    // }    
 
     return store
 }

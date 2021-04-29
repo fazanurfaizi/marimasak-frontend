@@ -47,10 +47,11 @@ import DetailRecipe from '../views/crud/DetailRecipe'
 export const routes = [
     { 
         path: '/', 
-        component: Login, 
-        layout: AuthLayout,
-        authentication: true 
+        component: Home, 
+        layout: AppLayout,
+        authentication: false 
     },
+
     { 
         path: '/recipes/create', 
         component: CreateRecipe, 
@@ -68,25 +69,22 @@ export const routes = [
         component: DetailRecipe, 
         layout: CrudLayout,
         authentication: true 
-    },
-    { 
-        path: '/home', 
-        component: Home, 
-        layout: AppLayout,
-        authentication: true 
-    },
+    },    
+
     { 
         path: '/products', 
         component: Product, 
         layout: AppLayout,
         authentication: false 
     },
+
     { 
         path: '/search/friends', 
         component: Friends, 
         layout: AppLayout,
         authentication: false 
     },
+
     { 
         path: '/checkout', 
         component: Checkout, 
@@ -99,18 +97,21 @@ export const routes = [
         layout: NavLayout,
         authentication: false 
     },
+
     {
         path: '/friends', 
         component: FriendsTimeline, 
         layout: AppLayout,
         authentication: true
     },
+
     { 
         path: '/notifications', 
         component: Notifications, 
         layout: AppLayout,
         authentication: true
     },
+
     { 
         path: '/messages', 
         component: Messages, 
@@ -143,6 +144,7 @@ export const routes = [
         layout: ProfileLayout,
         authentication: true
     },
+    
     { 
         path: '/settings-basic', 
         component: BasicSetting, 

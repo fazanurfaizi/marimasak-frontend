@@ -1,9 +1,6 @@
 import React from 'react'
-import { Route, Redirect } from 'react-router-dom'
-
-const fakeAuth = {
-    isAuthenticated: true
-}
+import { Route, Redirect } from 'react-router'
+import { useSelector } from 'react-redux'
 
 const AppRoute = ({
     component: Component,
@@ -11,11 +8,12 @@ const AppRoute = ({
     authentication = false,
     ...rest
 }) => {
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
     return (
         <Route        
             {...rest}
             render={props => (
-                authentication ? (fakeAuth.isAuthenticated ? (
+                authentication ? (isAuthenticated ? (
                     <Layout>
                         <Component {...props} />
                     </Layout>
