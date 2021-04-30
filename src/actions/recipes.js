@@ -24,7 +24,7 @@ export function fetchRecipesFailure(error) {
     return {
         type: FETCH_RECIPES_FAILURE,
         payload: {
-            message: error.data.message
+            message: error
         }
     }
 }

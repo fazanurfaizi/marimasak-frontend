@@ -1,67 +1,22 @@
+import { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+import { getProductTypes, getProducts, setSelectedProductType } from '../../actions/product'
 import Post from '../../components/Product'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Product = () => {
-    let i=0;
-    const data = [
-        {
-            //data untuk src components product index.js benerin
-            id:"1",
-            name: 'Ayam Bakar Khas Paang',
-            // profile: photo,
-            // thumbnail: post1,
-            harga: "3000",
-            lokasi: "Buah Batu, Bandung.",
-            rate: "4,2",
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-        {
-            id:"2",
-            name: 'Ayam Bakar Khas Padang',
-            // profile: photo,
-            // thumbnail: post2,
-            harga: 30000,
-            lokasi: "Buah Batu, Bandung.",
-            rate: "4,4",
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-        {
-            id:"3",
-            name: 'Ayam Bakar Khas Padang',
-            // profile: photo,
-            // thumbnail: post3,
-            harga: 30000,
-            lokasi: "Buah Batu, Bandung.",
-            rate: "4,2",
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-        {
-            id:"4",
-            name: 'Ayam Bakar Khas Padang',
-            // profile: photo,
-            // thumbnail: post3,
-            harga: 3000,
-            lokasi: "Buah Batu, Bandung.",
-            rate: "4,2",
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-        {
-            id:"5",
-            name: 'Ayam Bakar Khas Padang',
-            // profile: photo,
-            // thumbnail: post3,
-            harga: 3000,
-            lokasi: "Buah Batu, Bandung.",
-            rate: "4,2",
-            body: "World's most beautiful car in Curabitur <a href='#' title=''>#test drive booking !</a> the most beatuiful car available in america and the saudia arabia, you can book your test drive by our official website",
-            publishedAt: 'june, 2 2018 19:PM',
-        },
-    ]
+const Product = () => {    
+    const dispatch = useDispatch()
+    const productTypes = useSelector(state => state.product.productTypes)
+    const selectedProductType = useSelector(state => state.product.selectedProductType)    
+    const products = useSelector(state => state.product.products)
+
+    useEffect(() => {
+        dispatch(getProductTypes())                
+    }, [dispatch])    
+
+    const handleChangeProductType = (e) => {
+        dispatch(setSelectedProductType(e.target.value))
+    }
 
     return (
         <>
@@ -74,9 +29,12 @@ const Product = () => {
                     </div>                    
                     <div className="filter">                       
                         <p>Category &nbsp;</p>
-                        <select>
-                            <option value="1">Dessert</option>
-                            <option value="2">Meat</option>
+                        <select value={selectedProductType} onChange={(e) => handleChangeProductType(e)} > 
+                            {productTypes.length > 0 && productTypes.map((item, index) => (
+                                <option value={item?.id} key={index}>
+                                    {item?.name}
+                                </option>
+                            ))}                            
                         </select>
                     </div>
                     <div className="filter">
@@ -88,15 +46,11 @@ const Product = () => {
                     </div>
                 </div>
                 <div className="product-container">
-
-                    {data.map((item, index) => (
-                        <div className="">
+                    {products.map((item, index) => (
                         <Post 
                             key={index}
                             item={item}
                         />
-                        
-                        </div>
                     ))}        
                 </div>
             </div>

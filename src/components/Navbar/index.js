@@ -2,13 +2,19 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { useDispatch, useSelector } from 'react-redux'
 import { useDetectClickOutside } from 'react-detect-click-outside';
+import { logout } from '../../actions/auth'
 import logo from '../../assets/images/logo.png'
 import annieProfile from '../../assets/images/Annie.PNG'
 
 const Navbar = () => {
 
+    const dispatch = useDispatch()
+    const location = useLocation();
+    const isAuthenticating = useSelector(state => state.auth.isAuthenticating)
+    const isAuthenticated = useSelector(state => state.auth.isAuthenticated)
+    const authUser = useSelector(state => state.auth.user)
     const [currentRoute, setCurrentRoute] = useState('');
     const [openNotification, setOpenNotification] = useState(false);    
     const [openDetMsg, setOpenDetMsg] = useState(false);    
@@ -16,7 +22,6 @@ const Navbar = () => {
     const [openLanguage, setOpenLanguage] = useState(false);
     const [openProfile, setOpenProfile] = useState(false);
     const [language, setLanguage] = useState('english');
-    const location = useLocation();
 
     const closeNotification = () => {
         setOpenNotification(false)
@@ -45,6 +50,11 @@ const Navbar = () => {
         setCurrentRoute(location.pathname)
     }, [currentRoute, location.pathname])
 
+    const handleLogout = (e) => {
+        e.preventDefault();
+        dispatch(logout())
+    }
+
     return (
         <div className="topbar stick">
             <div className="logo">
@@ -71,68 +81,84 @@ const Navbar = () => {
                             <i className="ti-bag"></i><span>20</span>
                         </Link>                            
                     </li>
-                    <li ref={notificationRef}>
-                        <a style={{ 'cursor': 'pointer' }} title="Notification" onClick={() => setOpenNotification(!openNotification)}>
-                            <i className="ti-bell"></i><span>20</span>
-                        </a>
-                        <div className={openNotification ? 'dropdowns active' : 'dropdowns'}>
-                            <span>4 New Notifications</span>
-                            <ul className="drops-menu">
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Fachri</h6>
-                                            <span>Menyukai resep anda.</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag green">New</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Taufik</h6>
-                                            <span>Menyukai resep anda.</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag red">New</span>
-                                </li>
-                                <li>
-                                    <a href="#" title="">
-                                        <img src={annieProfile} alt="" />
-                                        <div className="mesg-meta">
-                                            <h6>Daffa</h6>
-                                            <span>Menyukai resep anda.</span>
-                                            <i>2 min ago</i>
-                                        </div>
-                                    </a>
-                                    <span className="tag red">New</span>
-                                </li>
-                            </ul>
-                            <a href="#" title="" className="more-mesg">view more</a>
-                        </div>
-                    </li>                    
+                    {isAuthenticated && (
+                        <li ref={notificationRef}>
+                            <a style={{ 'cursor': 'pointer' }} title="Notification" onClick={() => setOpenNotification(!openNotification)}>
+                                <i className="ti-bell"></i><span>20</span>
+                            </a>
+                            <div className={openNotification ? 'dropdowns active' : 'dropdowns'}>
+                                <span>4 New Notifications</span>
+                                <ul className="drops-menu">
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src={annieProfile} alt="" />
+                                            <div className="mesg-meta">
+                                                <h6>Fachri</h6>
+                                                <span>Menyukai resep anda.</span>
+                                                <i>2 min ago</i>
+                                            </div>
+                                        </a>
+                                        <span className="tag green">New</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src={annieProfile} alt="" />
+                                            <div className="mesg-meta">
+                                                <h6>Taufik</h6>
+                                                <span>Menyukai resep anda.</span>
+                                                <i>2 min ago</i>
+                                            </div>
+                                        </a>
+                                        <span className="tag red">New</span>
+                                    </li>
+                                    <li>
+                                        <a href="#" title="">
+                                            <img src={annieProfile} alt="" />
+                                            <div className="mesg-meta">
+                                                <h6>Daffa</h6>
+                                                <span>Menyukai resep anda.</span>
+                                                <i>2 min ago</i>
+                                            </div>
+                                        </a>
+                                        <span className="tag red">New</span>
+                                    </li>
+                                </ul>
+                                <a href="#" title="" className="more-mesg">view more</a>
+                            </div>
+                        </li>
+                    )}                    
                 </ul>
                 <div className="user-img" onClick={() => setOpenProfile(!openProfile)} ref={profileRef}>
                     <img src={annieProfile} alt="" width="40" />
                     <span className="status f-online"></span>
-                    <div className={openProfile ? 'user-setting active' : 'user-setting'}>  
-                        <Link to="/u/profile" title="Profile">
-                            <i className="ti-user"></i> profile
-                        </Link>                            
-                        <Link to="/settings-basic" title="activity log">
-                            <i className="ti-target"></i>
-                            activity log
-                        </Link>                        
-                        <Link to="/settings-basic" title="settings">
-                            <i className="ti-settings"></i>
-                            settings
-                        </Link>                        
-                        <a href="/login" title=""><i className="ti-power-off"></i>log out</a>
-                    </div>
+                    {isAuthenticated ? (
+                        <div className={openProfile ? 'user-setting active' : 'user-setting'}>  
+                            <Link to={`/u/${authUser?.name}`} title="Profile">
+                                <i className="ti-user"></i> {authUser?.name}
+                            </Link>                            
+                            <Link to="/settings-basic" title="activity log">
+                                <i className="ti-target"></i>
+                                activity log
+                            </Link>                        
+                            <Link to="/settings-basic" title="settings">
+                                <i className="ti-settings"></i>
+                                settings
+                            </Link>                   
+                            <button className="btn btn-light blue" onClick={handleLogout} title="Logout">
+                                <i className="ti-power-off"></i>
+                                {' '}
+                                <span>
+                                    {isAuthenticating ? "Loading..." : "Log Out"}
+                                </span>                            
+                            </button>                             
+                        </div>
+                    ) : (
+                        <div className={openProfile ? 'user-setting active' : 'user-setting'}>  
+                            <Link to="/login" title="Login">
+                                <i className="ti-user"></i> Login
+                            </Link>                                                                        
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

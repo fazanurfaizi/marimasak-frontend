@@ -4,6 +4,9 @@ import { history } from '../utils/history'
 export const LOGIN_REQUEST = 'LOGIN_REQUEST'
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS'
 export const LOGIN_FAILURE = 'LOGIN_FAILURE'
+export const REGISTER_REQUEST = 'REGISTER_REQUEST'
+export const REGISTER_SUCCESS = 'REGISTER_SUCCESS'
+export const REGISTER_FAILURE = 'REGISTER_FAILURE'
 export const GET_AUTH_USER_REQUEST = 'GET_AUTH_USER_REQUEST'
 export const GET_AUTH_USER_SUCCESS = 'GET_AUTH_USER_SUCCESS'
 export const GET_AUTH_USER_FAILURE = 'GET_AUTH_USER_FAILURE'
@@ -49,6 +52,42 @@ export function login(email, password) {
             })
             .catch(error => {                             
                 dispatch(loginFailure(error))
+            })
+    }
+}
+
+export function registerRequest() {
+    return {
+        type: REGISTER_REQUEST
+    }
+}
+
+export function registerSuccess() {    
+    return {
+        type: REGISTER_SUCCESS,        
+    }
+}
+
+export function registerFailure() {    
+    return {
+        type: REGISTER_FAILURE,
+        payload: {
+            status: 403,
+            statusText: 'register failed'
+        }
+    }
+}
+
+export function register(body) {
+    return function(dispatch) {
+        dispatch(registerRequest())        
+        authService.register(body)
+            .then(response => {                
+                dispatch(registerSuccess())                
+                history.push('/login')                        
+            })
+            .catch(error => {                             
+                dispatch(registerFailure())
             })
     }
 }
@@ -120,6 +159,7 @@ export function logout() {
         authService.logout()
             .then(response => {
                 dispatch(logoutSuccess(response))
+                history.push('/login')
             })
             .catch(error => {
                 dispatch(logoutFailure(error))

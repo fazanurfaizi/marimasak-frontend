@@ -12,12 +12,14 @@ import {
 import alert from '../reducers/alert'
 import auth from '../reducers/auth'
 import recipe from '../reducers/recipe'
+import product from '../reducers/product'
 
 const logger = createLogger();
 const rootReducer = combineReducers({
     auth,
     alert,
-    recipe
+    recipe,
+    product
 })
 const initialState = {};
 

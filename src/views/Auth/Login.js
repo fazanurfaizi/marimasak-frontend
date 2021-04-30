@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { login, logout } from '../../actions/auth'
 
 const Login = () => {
 
-  const dispatch = useDispatch()
-  const location = useLocation()  
+  const dispatch = useDispatch()  
 
   const [inputs, setInputs] = useState({
     email: '',
     password: ''
   })
-  const { email, password } = inputs
-  const [submitted, setSubmitted] = useState(false)  
+  const { email, password } = inputs  
   const isAuthenticating = useSelector(state => state.auth.isAuthenticating)  
 
   // useEffect(() => {
@@ -29,11 +27,9 @@ const Login = () => {
   }
 
   function handleSubmit(e) {
-    e.preventDefault()
-    setSubmitted(true)
-    if(email && password) {
-      const { from } = location.state || { from: { pathname: '/' } }
-      dispatch(login(email, password, from))        
+    e.preventDefault()    
+    if(email && password) {      
+      dispatch(login(email, password))        
     }
   }
 
@@ -50,12 +46,12 @@ const Login = () => {
             required 
             value={email}
             onChange={handleChange}
-            className={'form-control' + (submitted && !email ? ' is-invalid' : '')}
+            className={'form-control' + (isAuthenticating && !email ? ' is-invalid' : '')}
           />
           <label className="control-label" htmlFor="email">
             Email
           </label>
-          {submitted && !email &&
+          {isAuthenticating && !email &&
             <div className="invalid-feedback">Email is required</div>
           }
           <i className="mtrl-select"></i>
@@ -72,7 +68,7 @@ const Login = () => {
           <label className="control-label" htmlFor="password">
             Password
           </label>
-          {submitted && !password &&
+          {isAuthenticating && !password &&
             <div className="invalid-feedback">Password is required</div>
           }
           <i className="mtrl-select"></i>

@@ -3,6 +3,9 @@ import {
     LOGIN_REQUEST,
     LOGIN_SUCCESS,
     LOGIN_FAILURE,
+    REGISTER_REQUEST,
+    REGISTER_SUCCESS,
+    REGISTER_FAILURE,
     GET_AUTH_USER_REQUEST,
     GET_AUTH_USER_SUCCESS,
     GET_AUTH_USER_FAILURE,
@@ -44,6 +47,25 @@ export default createReducer(initialState, {
             'statusText': payload.statusText
         })
     },
+    [REGISTER_REQUEST]: (state, payload) => {
+        return Object.assign({}, state, {
+            'isAuthenticating': true            
+        })
+    },
+    [REGISTER_SUCCESS]: (state, payload) => {
+        return Object.assign({}, state, {
+            'isAuthenticating': false,            
+            'status': 200,
+            'statusText': 'register Success'
+        })
+    },
+    [REGISTER_FAILURE]: (state, payload) => {
+        return Object.assign({}, state, {
+            'isAuthenticating': false,            
+            'status': 403,
+            'statusText': 'register failed'
+        })
+    },
     [GET_AUTH_USER_REQUEST]: (state, payload) => {
         return Object.assign({}, state, {
             'user': null
@@ -60,15 +82,20 @@ export default createReducer(initialState, {
         })
     },
     [LOGOUT_REQUEST]: (state, payload) => {
-        return Object.assign({}, state)
+        return Object.assign({}, state, {
+            'isAuthenticating': true
+        })
     },
     [LOGOUT_SUCCES]: (state, payload) => {
         return Object.assign({}, state, {
+            'isAuthenticating': false,
+            'isAuthenticated': false,
             'statusText': payload.statusText
         })
     },
     [LOGOUT_FAILURE]: (state, payload) => {
         return Object.assign({}, state, {
+            'isAuthenticating': false,
             'status': payload.status,
             'statusText': payload.statusText
         })

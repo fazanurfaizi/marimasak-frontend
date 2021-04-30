@@ -12,7 +12,7 @@ const login = (email, password) => {
 
 const register = (body) => {
     return new Promise((resolve, reject) => {
-        axios.post('/auth/register', { body })
+        axios.post('/auth/register', body)
             .then(response => {                
                 resolve(response)
             })
